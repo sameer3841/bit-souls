@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://dtmqxma54y5j7"
+path="res://.godot/imported/Skeleton_01_White_Attack2.png-e79c6a6052bd14c0d161a45dd9158fa0.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Attack2.png"
+dest_files=["res://.godot/imported/Skeleton_01_White_Attack2.png-e79c6a6052bd14c0d161a45dd9158fa0.ctex"]
 
 [params]
 

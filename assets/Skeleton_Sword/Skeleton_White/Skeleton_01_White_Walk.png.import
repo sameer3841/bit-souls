@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://bnnm7ni5qmvuw"
+path="res://.godot/imported/Skeleton_01_White_Walk.png-2d2c055e8c346c99dacbb2849ef2c665.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Walk.png"
+dest_files=["res://.godot/imported/Skeleton_01_White_Walk.png-2d2c055e8c346c99dacbb2849ef2c665.ctex"]
 
 [params]
 

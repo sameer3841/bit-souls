@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://d150lfusi11l2"
+path="res://.godot/imported/Salt.png-778b117210334505e842c86ac9e82589.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Moon-Graveyard/Salt.png"
+dest_files=["res://.godot/imported/Salt.png-778b117210334505e842c86ac9e82589.ctex"]
 
 [params]
 

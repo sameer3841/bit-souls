@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://dns8dwrrqs0fg"
+path="res://.godot/imported/brush.png-aae2c75974b5458e112d6093264732c7.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Moon-Graveyard/brush.png"
+dest_files=["res://.godot/imported/brush.png-aae2c75974b5458e112d6093264732c7.ctex"]
 
 [params]
 

@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://c275kdiqfkqdi"
+path="res://.godot/imported/Skeleton_01_Yellow_Idle.png-5e152fb6cef967691c1723958e62a977.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Skeleton_Sword/Skeleton_Yellow/Skeleton_01_Yellow_Idle.png"
+dest_files=["res://.godot/imported/Skeleton_01_Yellow_Idle.png-5e152fb6cef967691c1723958e62a977.ctex"]
 
 [params]
 

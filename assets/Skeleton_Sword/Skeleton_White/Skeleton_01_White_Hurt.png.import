@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://co1jl7ljb1u8i"
+path="res://.godot/imported/Skeleton_01_White_Hurt.png-cf544207c57a890a0feb813dc5162524.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Hurt.png"
+dest_files=["res://.godot/imported/Skeleton_01_White_Hurt.png-cf544207c57a890a0feb813dc5162524.ctex"]
 
 [params]
 

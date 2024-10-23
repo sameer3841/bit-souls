@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://cq5olaic420l"
+path="res://.godot/imported/Background_0.png-2fc8d98dd81b3eb97029f55497edec08.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Moon-Graveyard/Background_0.png"
+dest_files=["res://.godot/imported/Background_0.png-2fc8d98dd81b3eb97029f55497edec08.ctex"]
 
 [params]
 
