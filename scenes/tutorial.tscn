@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://fvjdoja8epna"]
+[gd_scene load_steps=7 format=4 uid="uid://fvjdoja8epna"]
 
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="1_i1ag5"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="2_4fmek"]
 [ext_resource type="PackedScene" uid="uid://b3mpyiv8emgn2" path="res://scenes/player.tscn" id="2_groux"]
+[ext_resource type="PackedScene" uid="uid://ddqslbphtyct7" path="res://scenes/death_boss.tscn" id="4_wqr7w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1cko"]
 texture = ExtResource("1_i1ag5")
@@ -179,7 +180,7 @@ tile_set = SubResource("TileSet_2dt0m")
 
 [node name="Moon_Graveyard_Parallax" parent="." instance=ExtResource("2_4fmek")]
 z_index = -1
-position = Vector2(571, 317)
+position = Vector2(573, 317)
 
 [node name="Player" parent="." instance=ExtResource("2_groux")]
 position = Vector2(45, -73)
@@ -207,3 +208,6 @@ offset_top = 99.0
 offset_right = 2236.0
 offset_bottom = 126.0
 text = "C / V / LMB - attack"
+
+[node name="DeathBoss" parent="." instance=ExtResource("4_wqr7w")]
+position = Vector2(281, -101)
