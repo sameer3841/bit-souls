@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbhnc836puo8p"]
+
+[ext_resource type="PackedScene" uid="uid://c2ok63wyq7qw5" path="res://scenes/death_boss.tscn" id="1_pnuav"]
+
+[node name="BossRoom" type="Node2D"]
+
+[node name="DeathBoss" parent="." instance=ExtResource("1_pnuav")]
+position = Vector2(387, 257)
