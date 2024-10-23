@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://b3mpyiv8emgn2"]
+[gd_scene load_steps=40 format=3 uid="uid://b3mpyiv8emgn2"]
 
 [ext_resource type="Texture2D" uid="uid://jcqlyq3c22b8" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_1.png" id="1_fydwy"]
+[ext_resource type="Script" path="res://script/player.gd" id="1_lxtkf"]
 [ext_resource type="Texture2D" uid="uid://bcbl0eu1gu832" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_2.png" id="2_2dp4t"]
 [ext_resource type="Texture2D" uid="uid://btknc5qc2cqhu" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_3.png" id="3_pgj4j"]
 [ext_resource type="Texture2D" uid="uid://cew6uajqjndqv" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_4.png" id="4_eij8k"]
@@ -169,17 +170,19 @@ height = 46.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
+script = ExtResource("1_lxtkf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_w7yn8")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.436523
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 41)
 shape = SubResource("CapsuleShape2D_gj1x1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(1.5, 1.5)
