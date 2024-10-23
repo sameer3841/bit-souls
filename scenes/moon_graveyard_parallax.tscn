@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://db1et6nvw7t8o"]
+
+[ext_resource type="Texture2D" uid="uid://cq5olaic420l" path="res://assets/Moon-Graveyard/Background_0.png" id="1_fwawx"]
+[ext_resource type="Texture2D" uid="uid://cldgmswauywvl" path="res://assets/Moon-Graveyard/Background_1.png" id="2_c7j6j"]
+
+[node name="Moon_Graveyard_Parallax" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sky" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_fwawx")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(768, 0)
+
+[node name="Buildings" type="Sprite2D" parent="Parallax2D2"]
+texture = ExtResource("2_c7j6j")
