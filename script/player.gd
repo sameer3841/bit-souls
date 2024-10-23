@@ -9,7 +9,7 @@ func _process(delta):
 	check_fall_off_map()
 func check_fall_off_map():
 	# Set the Y position threshold, for example, if the player falls below Y = 500
-	if position.y > 700:
+	if position.y > 1000:
 		respawn()
 
 func respawn():
