@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://sxe6jejr3s0d"
+path="res://.godot/imported/idle_7.png-cb5e464ac14cc64bc4671cb2ec99a747.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_7.png"
+dest_files=["res://.godot/imported/idle_7.png-cb5e464ac14cc64bc4671cb2ec99a747.ctex"]
 
 [params]
 

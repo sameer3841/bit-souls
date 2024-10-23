@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://cggg6hwwj2wt2"
+path="res://.godot/imported/jump_2.png-e3f1c0244c2ceae0f46ba7ee5e1191ca.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/03_jump/jump_2.png"
+dest_files=["res://.godot/imported/jump_2.png-e3f1c0244c2ceae0f46ba7ee5e1191ca.ctex"]
 
 [params]
 

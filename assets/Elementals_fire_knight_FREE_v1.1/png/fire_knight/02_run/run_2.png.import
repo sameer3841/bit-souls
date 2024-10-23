@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://dopqpu0i34wi3"
+path="res://.godot/imported/run_2.png-eb607552b36c2f2a807da0a00bac7ae2.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/02_run/run_2.png"
+dest_files=["res://.godot/imported/run_2.png-eb607552b36c2f2a807da0a00bac7ae2.ctex"]
 
 [params]
 

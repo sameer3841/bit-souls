@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://cokgbw8dwbnib"
+path="res://.godot/imported/death_1.png-b0fec38bb8e699820a1cf72fad0588ed.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_1.png"
+dest_files=["res://.godot/imported/death_1.png-b0fec38bb8e699820a1cf72fad0588ed.ctex"]
 
 [params]
 

@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://162pqfdr316o"
+path="res://.godot/imported/take_hit_3.png-eccabdc1b3bd5c3f14ed3fd4c978c52c.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/10_take_hit/take_hit_3.png"
+dest_files=["res://.godot/imported/take_hit_3.png-eccabdc1b3bd5c3f14ed3fd4c978c52c.ctex"]
 
 [params]
 

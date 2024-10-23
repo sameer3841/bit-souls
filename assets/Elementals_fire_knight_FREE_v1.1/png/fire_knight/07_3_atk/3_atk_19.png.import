@@ -2,14 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://cyvb073jhbr3i"
-
-valid=false
+uid="uid://6go302yyyueg"
+path="res://.godot/imported/3_atk_19.png-7fe8e8094602336ea75bc9bf3649135c.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://schematics/Level1_schem.png"
+source_file="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/07_3_atk/3_atk_19.png"
+dest_files=["res://.godot/imported/3_atk_19.png-7fe8e8094602336ea75bc9bf3649135c.ctex"]
 
 [params]
 
