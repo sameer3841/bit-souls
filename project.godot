@@ -11,9 +11,7 @@ config_version=5
 [application]
 
 config/name="bit-souls"
-
 run/main_scene="res://scenes/tutorial.tscn"
-
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
