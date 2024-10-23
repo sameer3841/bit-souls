@@ -4,12 +4,12 @@ var player = null
 var state_machine
 
 # TODO: Play around with the range and speed values
-const ATTACK_RANGE = 2
-const WALK_RANGE = 12
+const ATTACK_RANGE = 50
+const WALK_RANGE = 300
 
 @export var player_path : NodePath
 @export var health = 3
-@export var speed = 3.0
+@export var speed = 70
 
 @onready var anim_tree = $AnimationTree
 
@@ -21,13 +21,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	velocity = Vector2.ZERO
+	velocity.x = 0
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	
 	match state_machine.get_current_node():
 		"walk":
-			if not is_on_floor():
-				velocity += get_gravity() * delta
-			if player.global_position - global_position > 0:
+			if player.global_position.x - $".".global_position.x > 0:
 				$Sprite2D.scale.x = 1
 				$SwordArea.rotation_degrees = 0
 				velocity.x = speed
@@ -44,10 +44,10 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func _target_in_range():
-	return global_position.distance_to(player.global_position) < WALK_RANGE
+	return $".".global_position.distance_to(player.global_position) < WALK_RANGE
 
 func _target_in_attack_range():
-	return global_position.distance_to(player.global_position) < ATTACK_RANGE
+	return $".".global_position.distance_to(player.global_position) < ATTACK_RANGE
 
 # TODO: Change collision layers/masks to work and create/set groups "player_sword" and "player_hitbox" in player scene
 func _on_hitbox_area_area_entered(area: Area2D) -> void:
@@ -59,9 +59,10 @@ func _on_hitbox_area_area_entered(area: Area2D) -> void:
 			anim_tree.set("parameters/conditions/hurt", false)
 		else:
 			anim_tree.set("parameters/conditions/die", true)
-			await get_tree().create_timer(2.5).timeout
+			await $AnimationTree.animation_finished
 			queue_free()
 
 func _on_sword_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_hitbox"):
-		pass # TODO: Subtract 1 from player's health
+		player.health -= 1
+		player.hurt()

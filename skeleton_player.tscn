@@ -1,12 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://lp5wg45x1d77"]
+[gd_scene load_steps=46 format=3 uid="uid://l3nthhjjq7i2"]
 
-[ext_resource type="Script" path="res://skeleton.gd" id="1_1e2o3"]
-[ext_resource type="Texture2D" uid="uid://ddrbrej8qab43" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Idle.png" id="2_aaysq"]
-[ext_resource type="Texture2D" uid="uid://bnnm7ni5qmvuw" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Walk.png" id="3_b582s"]
-[ext_resource type="Texture2D" uid="uid://bg16quqnbmqq5" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Attack1.png" id="4_cu22p"]
-[ext_resource type="Texture2D" uid="uid://dtmqxma54y5j7" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Attack2.png" id="5_u388h"]
-[ext_resource type="Texture2D" uid="uid://co1jl7ljb1u8i" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Hurt.png" id="6_rfwkj"]
-[ext_resource type="Texture2D" uid="uid://blwao1pjj12e2" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Die.png" id="7_erx0y"]
+[ext_resource type="Script" path="res://skeleton_player.gd" id="1_1j3i5"]
+[ext_resource type="Texture2D" uid="uid://dtmqxma54y5j7" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Attack2.png" id="2_liqqj"]
+[ext_resource type="Texture2D" uid="uid://dbmkv68jgg6e7" path="res://assets/Skeleton_Sword/Skeleton_Yellow/Skeleton_01_Yellow_Attack1.png" id="3_7asnu"]
+[ext_resource type="Texture2D" uid="uid://bi7vcpn0uc0ig" path="res://assets/Skeleton_Sword/Skeleton_Yellow/Skeleton_01_Yellow_Attack2.png" id="4_8gbum"]
+[ext_resource type="Texture2D" uid="uid://bfnsfthnyldlw" path="res://assets/Skeleton_Sword/Skeleton_Yellow/Skeleton_01_Yellow_Die.png" id="5_utar8"]
+[ext_resource type="Texture2D" uid="uid://cp7l67ixnjupa" path="res://assets/Skeleton_Sword/Skeleton_Yellow/Skeleton_01_Yellow_Hurt.png" id="6_qu2h5"]
+[ext_resource type="Texture2D" uid="uid://c275kdiqfkqdi" path="res://assets/Skeleton_Sword/Skeleton_Yellow/Skeleton_01_Yellow_Idle.png" id="7_3sxvk"]
+[ext_resource type="Texture2D" uid="uid://cffek3nb808ch" path="res://assets/Skeleton_Sword/Skeleton_Yellow/Skeleton_01_Yellow_Walk.png" id="8_0vs8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e1xn"]
 size = Vector2(28, 46)
@@ -29,7 +30,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_u388h")]
+"values": [ExtResource("2_liqqj")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -82,7 +83,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.833333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("4_cu22p"), ExtResource("4_cu22p")]
+"values": [ExtResource("3_7asnu"), ExtResource("3_7asnu")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -147,7 +148,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.75),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("5_u388h"), ExtResource("5_u388h")]
+"values": [ExtResource("4_8gbum"), ExtResource("4_8gbum")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -212,7 +213,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.08333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("7_erx0y"), ExtResource("7_erx0y")]
+"values": [ExtResource("5_utar8"), ExtResource("5_utar8")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -277,7 +278,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.416667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("6_rfwkj"), ExtResource("6_rfwkj")]
+"values": [ExtResource("6_qu2h5"), ExtResource("6_qu2h5")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -340,10 +341,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.666667),
+"times": PackedFloat32Array(0, 0.666666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("2_aaysq"), ExtResource("2_aaysq")]
+"values": [ExtResource("7_3sxvk"), ExtResource("7_3sxvk")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -409,7 +410,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.833333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("3_b582s"), ExtResource("3_b582s")]
+"values": [ExtResource("8_0vs8d"), ExtResource("8_0vs8d")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -556,6 +557,14 @@ advance_condition = &"die"
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lj03d"]
+advance_mode = 2
+advance_condition = &"attack1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0i5vn"]
+advance_mode = 2
+advance_condition = &"attack2"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lfjq2"]
 states/End/position = Vector2(916, 100)
 states/attack1/node = SubResource("AnimationNodeAnimation_hs66w")
@@ -570,28 +579,27 @@ states/idle/node = SubResource("AnimationNodeAnimation_i0iy7")
 states/idle/position = Vector2(305, 100)
 states/walk/node = SubResource("AnimationNodeAnimation_f5mxg")
 states/walk/position = Vector2(407, 6)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_4ti3s"), "die", "End", SubResource("AnimationNodeStateMachineTransition_vuycw"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_hr2w0"), "walk", "attack1", SubResource("AnimationNodeStateMachineTransition_3e4jg"), "walk", "attack2", SubResource("AnimationNodeStateMachineTransition_non6i"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_betxc"), "attack1", "walk", SubResource("AnimationNodeStateMachineTransition_jaj3w"), "attack2", "walk", SubResource("AnimationNodeStateMachineTransition_csr76"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_sc7sy"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_2oku5"), "attack1", "hurt", SubResource("AnimationNodeStateMachineTransition_wn0g4"), "attack2", "hurt", SubResource("AnimationNodeStateMachineTransition_4mxpk"), "attack1", "die", SubResource("AnimationNodeStateMachineTransition_8a33v"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_yl56i"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_abfkg"), "attack2", "die", SubResource("AnimationNodeStateMachineTransition_bkita"), "hurt", "walk", SubResource("AnimationNodeStateMachineTransition_3ayi8")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_4ti3s"), "die", "End", SubResource("AnimationNodeStateMachineTransition_vuycw"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_hr2w0"), "walk", "attack1", SubResource("AnimationNodeStateMachineTransition_3e4jg"), "walk", "attack2", SubResource("AnimationNodeStateMachineTransition_non6i"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_betxc"), "attack1", "walk", SubResource("AnimationNodeStateMachineTransition_jaj3w"), "attack2", "walk", SubResource("AnimationNodeStateMachineTransition_csr76"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_sc7sy"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_2oku5"), "attack1", "hurt", SubResource("AnimationNodeStateMachineTransition_wn0g4"), "attack2", "hurt", SubResource("AnimationNodeStateMachineTransition_4mxpk"), "attack1", "die", SubResource("AnimationNodeStateMachineTransition_8a33v"), "walk", "die", SubResource("AnimationNodeStateMachineTransition_yl56i"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_abfkg"), "attack2", "die", SubResource("AnimationNodeStateMachineTransition_bkita"), "hurt", "walk", SubResource("AnimationNodeStateMachineTransition_3ayi8"), "idle", "attack1", SubResource("AnimationNodeStateMachineTransition_lj03d"), "idle", "attack2", SubResource("AnimationNodeStateMachineTransition_0i5vn")]
 graph_offset = Vector2(-96, -48)
 
-[node name="Skeleton" type="CharacterBody2D"]
-script = ExtResource("1_1e2o3")
+[node name="Skeleton_Player" type="CharacterBody2D"]
+script = ExtResource("1_1j3i5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("5_u388h")
+texture = ExtResource("2_liqqj")
 hframes = 9
-frame = 1
 
 [node name="SkeletonCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_1e1xn")
 
-[node name="SwordArea" type="Area2D" parent="." groups=["enemy_attack"]]
+[node name="SwordArea" type="Area2D" parent="." groups=["player_sword"]]
 
 [node name="SwordCollision" type="CollisionShape2D" parent="SwordArea"]
 position = Vector2(19, 0)
 shape = SubResource("RectangleShape2D_q311p")
 
-[node name="HitboxArea" type="Area2D" parent="."]
+[node name="HitboxArea" type="Area2D" parent="." groups=["player_hitbox"]]
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea"]
 position = Vector2(0, 9)
