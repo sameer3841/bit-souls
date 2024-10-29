@@ -39,12 +39,13 @@ func _physics_process(delta: float) -> void:
 	match current_state:
 		player_status.JUMP:
 			$AnimatedSprite2D.play("jump")
-			velocity.y = JUMP_VELOCITY
+			if is_on_floor():
+				velocity.y = JUMP_VELOCITY
 			current_state = player_status.MOVE
 
 		player_status.MOVE:
 			var multi = 1
-			if Input.is_action_pressed("run"): multi = 2
+			if Input.is_action_pressed("run") and is_on_floor(): multi = 2
 			else: multi = 1
 			var direction := Input.get_axis("left", "right")
 			if direction != 0:
