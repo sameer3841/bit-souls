@@ -4,8 +4,8 @@ var player = null
 var state_machine
 
 # TODO: Play around with the range and speed values
-const ATTACK_RANGE = 50
-const WALK_RANGE = 300
+const ATTACK_RANGE = 60
+const WALK_RANGE = 400
 
 @export var player_path : NodePath
 @export var health = 3
