@@ -64,6 +64,9 @@ func _physics_process(delta: float) -> void:
 
 
 func handle_combo():
+	if not is_on_floor():
+		$AnimatedSprite2D.play("air_atk")
+		await $AnimatedSprite2D.animation_finished
 	if combo_counter == 1:
 		$AnimatedSprite2D.play("attack1")  # First attack animation
 		await $AnimatedSprite2D.animation_finished
