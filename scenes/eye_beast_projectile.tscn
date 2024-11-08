@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnx5dw3uet8sy"]
+[gd_scene load_steps=20 format=3 uid="uid://dnx5dw3uet8sy"]
 
+[ext_resource type="Script" path="res://script/eye_beast_projectile.gd" id="1_j3v6g"]
 [ext_resource type="Texture2D" uid="uid://chk6v4t4s1qpn" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Void Ball Projectile1.png" id="1_y180f"]
 [ext_resource type="Texture2D" uid="uid://c88r72byijwnx" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Void Ball Projectile2.png" id="2_l6mll"]
 [ext_resource type="Texture2D" uid="uid://bvmeka6qcgg1g" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Void Ball Projectile3.png" id="3_f2de2"]
@@ -44,8 +45,9 @@ height = 36.0
 
 [sub_resource type="Animation" id="Animation_0xehi"]
 resource_name = "Active"
-length = 0.333337
+length = 0.333367
 loop_mode = 1
+step = 0.333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,45 +83,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
-}
-
-[sub_resource type="Animation" id="Animation_lrash"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Active"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_reu5l"]
@@ -162,6 +125,45 @@ tracks/2/keys = {
 "values": [true, true]
 }
 
+[sub_resource type="Animation" id="Animation_lrash"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Active"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwsml"]
 _data = {
 "Active": SubResource("Animation_0xehi"),
@@ -195,6 +197,7 @@ states/End/position = Vector2(755, 100)
 transitions = ["Start", "Active", SubResource("AnimationNodeStateMachineTransition_4wlhm"), "Active", "Destroyed", SubResource("AnimationNodeStateMachineTransition_imuti"), "Destroyed", "End", SubResource("AnimationNodeStateMachineTransition_ymdwh")]
 
 [node name="eye_beast_projectile" type="Node2D"]
+script = ExtResource("1_j3v6g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xwxqq")
@@ -217,3 +220,10 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_uqk2y")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/destroyed = false
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rotation = 0.00243073
+rect = Rect2(-30, -30, 60, 60)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
