@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var current_state = player_status.MOVE
-enum player_status {MOVE, JUMP, ATTACK}
+enum player_status {MOVE, JUMP, ATTACK, FALL}
 
 const SPEED = 260.0
 const JUMP_VELOCITY = -550.0
@@ -11,6 +11,7 @@ var respawn_point = Vector2(45, -73)
 var coin_count = 0
 var combo_counter = 0
 var combo_timer := Timer.new()
+var isAttacking = false
 
 func _ready():
 	add_child(combo_timer)
@@ -39,12 +40,20 @@ func _physics_process(delta: float) -> void:
 	match current_state:
 		player_status.JUMP:
 			$AnimatedSprite2D.play("jump")
-			if is_on_floor():
-				velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY
+			current_state = player_status.FALL
+			
+		player_status.FALL:
+			$AnimatedSprite2D.play("falling")
+			await is_on_floor()
+			$AnimatedSprite2D.play("landing")
 			current_state = player_status.MOVE
-
+			
 		player_status.MOVE:
 			var multi = 1
+			if Input.is_action_pressed("left") and Input.is_action_pressed("right"):
+				$AnimatedSprite2D.play("block")
+				await $AnimatedSprite2D.animation_finished
 			if Input.is_action_pressed("run") and is_on_floor(): multi = 2
 			else: multi = 1
 			var direction := Input.get_axis("left", "right")
@@ -55,9 +64,14 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED * multi)
 				if is_on_floor(): $AnimatedSprite2D.play("idle")
+					
+			#if is_on_floor() and Input.is_action_just_pressed("jump"):
+				#$AnimatedSprite2D.play("jump")
+				#await $AnimatedSprite2D.animation_finished
 			if not is_on_floor():
-				$AnimatedSprite2D.play("jump")
+				$AnimatedSprite2D.play("falling")
 				await is_on_floor()
+				
 		player_status.ATTACK:
 			handle_combo()
 	move_and_slide()
@@ -67,17 +81,19 @@ func handle_combo():
 	if not is_on_floor():
 		$AnimatedSprite2D.play("air_atk")
 		await $AnimatedSprite2D.animation_finished
+		current_state = player_status.MOVE
+		
 	if combo_counter == 1:
 		$AnimatedSprite2D.play("attack1")  # First attack animation
 		await $AnimatedSprite2D.animation_finished
 		current_state = player_status.MOVE
 
-	elif combo_counter == 2:
+	if combo_counter == 2:
 		$AnimatedSprite2D.play("attack2")  # Second attack animation (combo move)
 		await $AnimatedSprite2D.animation_finished
 		current_state = player_status.MOVE
 
-	elif combo_counter == 3:
+	if combo_counter == 3:
 		$AnimatedSprite2D.play("attack3")  # Third attack animation (3-combo move)
 		await $AnimatedSprite2D.animation_finished
 		current_state = player_status.MOVE
