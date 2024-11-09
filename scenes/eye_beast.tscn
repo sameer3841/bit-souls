@@ -738,6 +738,7 @@ position = Vector2(-5, -2.5)
 sprite_frames = SubResource("SpriteFrames_y768m")
 animation = &"Idle"
 autoplay = "Idle"
+frame = 1
 
 [node name="EyeBeastCollision" type="CollisionShape2D" parent="."]
 position = Vector2(6, 3)

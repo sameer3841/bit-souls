@@ -25,12 +25,13 @@ func _physics_process(delta: float) -> void:
 		"Idle":
 			is_chasing = target_in_range()
 		"Move":
-			rotation = player.global_position.angle_to_point(position)
+			var target_position = Vector2(player.global_position.x, player.global_position.y + 30)
+			rotation = target_position.angle_to_point(position)
 			if target_too_close():
-				var direction = player.global_position.direction_to(position)
+				var direction = target_position.direction_to(position)
 				velocity = direction * speed
 			elif target_too_far():
-				var direction = position.direction_to(player.global_position)
+				var direction = position.direction_to(target_position)
 				velocity = direction * speed
 	
 	anim_tree.set("parameters/conditions/move", is_chasing)
