@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://lp5wg45x1d77"]
 
-[ext_resource type="Script" path="res://skeleton.gd" id="1_1e2o3"]
+[ext_resource type="Script" path="res://script/skeleton.gd" id="1_1e2o3"]
 [ext_resource type="Texture2D" uid="uid://ddrbrej8qab43" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Idle.png" id="2_aaysq"]
 [ext_resource type="Texture2D" uid="uid://bnnm7ni5qmvuw" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Walk.png" id="3_b582s"]
 [ext_resource type="Texture2D" uid="uid://bg16quqnbmqq5" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Attack1.png" id="4_cu22p"]
@@ -579,7 +579,7 @@ script = ExtResource("1_1e2o3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("5_u388h")
 hframes = 9
-frame = 1
+frame = 4
 
 [node name="SkeletonCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
