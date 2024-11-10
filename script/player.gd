@@ -13,6 +13,7 @@ var combo_counter = 0
 var combo_timer := Timer.new()
 var isAttacking = false
 
+
 func _ready():
 	add_child(combo_timer)
 	combo_timer.wait_time = COMBO_TIMEOUT
@@ -39,15 +40,30 @@ func _physics_process(delta: float) -> void:
 
 	match current_state:
 		player_status.JUMP:
+			
 			$AnimatedSprite2D.play("jump")
-			velocity.y = JUMP_VELOCITY
-			current_state = player_status.FALL
+			var direction := Input.get_axis("left", "right")
+			if direction != 0:
+				velocity.x = direction * SPEED * 1
+				if is_on_floor(): $AnimatedSprite2D.play("run")
+				$AnimatedSprite2D.flip_h = velocity.x < 0
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED * 1)
+			if velocity.y > 0:
+				current_state = player_status.FALL
 			
 		player_status.FALL:
 			$AnimatedSprite2D.play("falling")
-			await is_on_floor()
-			$AnimatedSprite2D.play("landing")
-			current_state = player_status.MOVE
+			var direction := Input.get_axis("left", "right")
+			if direction != 0:
+				velocity.x = direction * SPEED * 1
+				if is_on_floor(): $AnimatedSprite2D.play("run")
+				$AnimatedSprite2D.flip_h = velocity.x < 0
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED * 1)
+			if is_on_floor():
+				$AnimatedSprite2D.play("landing")
+				current_state = player_status.MOVE
 			
 		player_status.MOVE:
 			var multi = 1
@@ -65,12 +81,11 @@ func _physics_process(delta: float) -> void:
 				velocity.x = move_toward(velocity.x, 0, SPEED * multi)
 				if is_on_floor(): $AnimatedSprite2D.play("idle")
 					
-			#if is_on_floor() and Input.is_action_just_pressed("jump"):
-				#$AnimatedSprite2D.play("jump")
-				#await $AnimatedSprite2D.animation_finished
-			if not is_on_floor():
-				$AnimatedSprite2D.play("falling")
-				await is_on_floor()
+			if is_on_floor() and Input.is_action_just_pressed("jump"):
+				velocity.y = JUMP_VELOCITY
+				current_state = player_status.JUMP
+			elif not is_on_floor():
+				current_state = player_status.FALL
 				
 		player_status.ATTACK:
 			handle_combo()
@@ -86,18 +101,22 @@ func handle_combo():
 	if combo_counter == 1:
 		$AnimatedSprite2D.play("attack1")  # First attack animation
 		await $AnimatedSprite2D.animation_finished
-		current_state = player_status.MOVE
+		
+		
 
 	if combo_counter == 2:
 		$AnimatedSprite2D.play("attack2")  # Second attack animation (combo move)
 		await $AnimatedSprite2D.animation_finished
-		current_state = player_status.MOVE
+		
+		
 
 	if combo_counter == 3:
 		$AnimatedSprite2D.play("attack3")  # Third attack animation (3-combo move)
 		await $AnimatedSprite2D.animation_finished
-		current_state = player_status.MOVE
+		
 		combo_counter = 0
+		
+	current_state = player_status.MOVE	
 
 	combo_timer.start()
 
