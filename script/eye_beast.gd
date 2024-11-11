@@ -22,9 +22,6 @@ func _ready() -> void:
 	is_chasing = false
 
 func _physics_process(delta: float) -> void:
-	if player == null:
-		return  # Exit early if the player node is not found
-
 	velocity = Vector2.ZERO
 	match state_machine.get_current_node():
 		"Idle":
