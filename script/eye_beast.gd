@@ -15,11 +15,16 @@ const TOO_FAR_RANGE = 250
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_node(player_path)
+	player = get_node_or_null(player_path)
+	if player == null:
+		print("Warning: Player node not found at path ", player_path)
 	state_machine = anim_tree.get("parameters/playback")
 	is_chasing = false
 
 func _physics_process(delta: float) -> void:
+	if player == null:
+		return  # Exit early if the player node is not found
+
 	velocity = Vector2.ZERO
 	match state_machine.get_current_node():
 		"Idle":

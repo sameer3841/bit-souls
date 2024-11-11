@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			var direction := Input.get_axis("left", "right")
 			if direction != 0:
 				velocity.x = direction * SPEED * 1
-				if is_on_floor(): $AnimatedSprite2D.play("run")
+				
 				$AnimatedSprite2D.flip_h = velocity.x < 0
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED * 1)
@@ -55,19 +55,19 @@ func _physics_process(delta: float) -> void:
 		player_status.FALL:
 			$AnimatedSprite2D.play("falling")
 			var direction := Input.get_axis("left", "right")
-			if direction != 0:
-				velocity.x = direction * SPEED * 1
-				if is_on_floor(): $AnimatedSprite2D.play("run")
-				$AnimatedSprite2D.flip_h = velocity.x < 0
-			else:
-				velocity.x = move_toward(velocity.x, 0, SPEED * 1)
 			if is_on_floor():
 				$AnimatedSprite2D.play("landing")
 				current_state = player_status.MOVE
+			if direction != 0:
+				velocity.x = direction * SPEED * 1
+				$AnimatedSprite2D.flip_h = velocity.x < 0
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED * 1)
+			
 			
 		player_status.MOVE:
 			var multi = 1
-			if Input.is_action_pressed("left") and Input.is_action_pressed("right"):
+			if Input.is_action_pressed("block"):
 				$AnimatedSprite2D.play("block")
 				await $AnimatedSprite2D.animation_finished
 			if Input.is_action_pressed("run") and is_on_floor(): multi = 2
@@ -93,31 +93,29 @@ func _physics_process(delta: float) -> void:
 
 
 func handle_combo():
+	# Perform air attack if not on floor
 	if not is_on_floor():
-		$AnimatedSprite2D.play("air_atk")
-		await $AnimatedSprite2D.animation_finished
+		combo_counter -= 1
+		$AnimationPlayer.play("air_atk")
+		await $AnimationPlayer.animation_finished
 		current_state = player_status.MOVE
-		
-	if combo_counter == 1:
-		$AnimatedSprite2D.play("attack1")  # First attack animation
-		await $AnimatedSprite2D.animation_finished
-		
-		
+		return  # Exit function to avoid running other code
+	
+	match combo_counter:
+		1:
+			$AnimationPlayer.play("attack1")  # First attack animation
+			await $AnimationPlayer.animation_finished
+		2:
+			$AnimationPlayer.play("attack2")  # Second attack animation (combo move)
+			await $AnimationPlayer.animation_finished
+		3:
+			$AnimationPlayer.play("attack3")  # Third attack animation (end of combo)
+			await $AnimationPlayer.animation_finished
+			combo_counter = 0  # Reset combo after last attack
+		_:
+			combo_counter = 0  # Safety reset for unexpected counter values
 
-	if combo_counter == 2:
-		$AnimatedSprite2D.play("attack2")  # Second attack animation (combo move)
-		await $AnimatedSprite2D.animation_finished
-		
-		
-
-	if combo_counter == 3:
-		$AnimatedSprite2D.play("attack3")  # Third attack animation (3-combo move)
-		await $AnimatedSprite2D.animation_finished
-		
-		combo_counter = 0
-		
-	current_state = player_status.MOVE	
-
+	current_state = player_status.MOVE
 	combo_timer.start()
 
 func _on_combo_timeout():
