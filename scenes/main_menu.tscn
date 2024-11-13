@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0fhrmatw7mva"]
+[gd_scene load_steps=12 format=3 uid="uid://pj0c0k3v3css"]
 
 [ext_resource type="Script" path="res://script/main_menu.gd" id="1_21jcr"]
 [ext_resource type="FontFile" uid="uid://beyn6bf08ad76" path="res://assets/Fonts/TrajanPro-Bold.otf" id="1_txsb8"]

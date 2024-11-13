@@ -877,6 +877,9 @@ script = ExtResource("3_j7x4d")
 [node name="Hurt" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_j7x4d")
 
+[node name="Attack" type="Node2D" parent="FiniteStateMachine/Hurt"]
+script = ExtResource("3_j7x4d")
+
 [node name="Skill" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_j7x4d")
 
@@ -887,7 +890,4 @@ script = ExtResource("3_j7x4d")
 script = ExtResource("3_j7x4d")
 
 [node name="Death" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("3_j7x4d")
-
-[node name="Attack" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_j7x4d")

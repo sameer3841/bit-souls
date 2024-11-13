@@ -7,6 +7,9 @@ const SPEED = 260.0
 const JUMP_VELOCITY = -550.0
 const COMBO_TIMEOUT = 0.1
 
+@export var respawnX: int
+@export var respawnY: int
+
 var respawn_point = Vector2(45, -73)
 var coin_count = 0
 var combo_counter = 0
