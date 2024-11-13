@@ -858,6 +858,7 @@ offset_bottom = 344.0
 text = "You've been cursed"
 
 [node name="debug" type="Label" parent="."]
+visible = false
 offset_left = 151.0
 offset_top = -69.0
 offset_right = 200.0

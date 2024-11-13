@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bn6vpyjl2r0p4" path="res://assets/Dimensional_Portal.png" id="1_cj6c7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5753j"]
-size = Vector2(37, 122)
+size = Vector2(29, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0fbm"]
 atlas = ExtResource("1_cj6c7")
@@ -62,14 +62,14 @@ script = ExtResource("1_6nh3e")
 [node name="portal_area" type="Area2D" parent="."]
 
 [node name="portal_collision" type="CollisionShape2D" parent="portal_area"]
-position = Vector2(15.5, -1)
+position = Vector2(11.5, 0)
 shape = SubResource("RectangleShape2D_5753j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_8wsfr")
 autoplay = "default"
-frame_progress = 0.682684
+frame_progress = 0.955886
 
 [connection signal="body_entered" from="portal_area" to="." method="_on_portal_area_body_entered"]
 [connection signal="body_entered" from="portal_area" to="portal_area" method="_on_body_entered"]
