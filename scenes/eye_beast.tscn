@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://ctkrbgvbvipas"]
+[gd_scene load_steps=97 format=3 uid="uid://s6lvlg058uf6"]
 
 [ext_resource type="Texture2D" uid="uid://dbcr77ki083j7" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack1.png" id="1_lw6e6"]
 [ext_resource type="Script" path="res://script/eye_beast.gd" id="1_pr1g3"]
