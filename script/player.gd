@@ -26,6 +26,7 @@ func _ready():
 	combo_timer.timeout.connect(_on_combo_timeout)
 
 func _process(_delta):
+	respawn_point = Vector2(respawnX, respawnY)
 	if Input.is_action_just_pressed("jump"): current_state = player_status.JUMP
 	if Input.is_action_just_pressed("attack"): 
 		combo_counter += 1

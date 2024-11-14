@@ -410,7 +410,9 @@ position = Vector2(2467, -590)
 texture = ExtResource("2_o8i88")
 
 [node name="Player" parent="." instance=ExtResource("7_2sw7f")]
-position = Vector2(56, 422)
+position = Vector2(60, 422)
+respawnX = 56.0
+respawnY = 422.0
 
 [node name="Brush" type="Sprite2D" parent="."]
 position = Vector2(290, 493)
