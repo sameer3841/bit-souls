@@ -262,6 +262,23 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.08333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"drop_items"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_5oe8d"]
 resource_name = "hurt"
@@ -579,7 +596,6 @@ script = ExtResource("1_1e2o3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("5_u388h")
 hframes = 9
-frame = 3
 
 [node name="SkeletonCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)

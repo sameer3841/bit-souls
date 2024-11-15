@@ -10,7 +10,8 @@ var newColor
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_parent().get_parent().get_node("Player") # there is definitely a better way to get the player...
+	EnemyGlobals.set_player()
+	player = EnemyGlobals.target_player
 	pickup_speed = randi_range(65, 100)
 	scale.x = randf_range(0.2, 0.4)
 	scale.y = scale.x
@@ -43,5 +44,5 @@ func _on_timer_timeout() -> void:
 # TODO: Currently, it is only collected via sword swing. Figure out how to collect it by walking into it.
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	# increase number of collected souls by one
-	print("pickup")
-	queue_free()
+	#queue_free()
+	pass

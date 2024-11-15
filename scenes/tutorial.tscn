@@ -221,7 +221,6 @@ player_path = NodePath("../Player")
 
 [node name="EyeBeast" parent="." instance=ExtResource("6_b831h")]
 position = Vector2(1518, -143)
-player_path = NodePath("../Player")
 
 [node name="Souls" type="Node" parent="."]
 

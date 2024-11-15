@@ -22,13 +22,11 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_scfx7")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_b3m7q")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(1, 1)
 energy = 4.0
 texture = SubResource("GradientTexture2D_7pxwe")
 

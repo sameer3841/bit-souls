@@ -1,23 +1,22 @@
 extends CharacterBody2D
 
-var player = null
+var player
 var state_machine
 var is_chasing
 const CHASE_RANGE = 400
 const TOO_CLOSE_RANGE = 150
 const TOO_FAR_RANGE = 200
 
-@export var player_path : NodePath
 @export var health = 3
 @export var speed = 200
+@export var num_of_souls = 20
 
 @onready var anim_tree = $AnimationTree
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_node_or_null(player_path)
-	if player == null:
-		print("Warning: Player node not found at path ", player_path)
+	EnemyGlobals.set_player() # there is probably a better place to put this line, but it works for now
+	player = EnemyGlobals.target_player
 	state_machine = anim_tree.get("parameters/playback")
 	is_chasing = false
 
@@ -57,6 +56,9 @@ func attack():
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = global_position
 	projectile.global_rotation = global_rotation
+
+func drop_items():
+	EnemyGlobals.drop_items(self)
 
 func _on_hitbox_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_sword"):

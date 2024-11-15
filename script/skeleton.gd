@@ -5,19 +5,19 @@ var state_machine
 
 # TODO: Play around with the range and speed values
 const ATTACK_RANGE = 50
-const WALK_RANGE = 300
+const WALK_RANGE = 400
 
 @export var player_path : NodePath
 @export var health = 3
-@export var speed = 70
+@export var speed = 85
+@export var num_of_souls = 10
 
 @onready var anim_tree = $AnimationTree
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_node_or_null(player_path)
-	if player == null:
-		print("Warning: Player node not found at path ", player_path)
+	EnemyGlobals.set_player()
+	player = EnemyGlobals.target_player
 	state_machine = anim_tree.get("parameters/playback")
 
 
@@ -54,6 +54,9 @@ func _target_in_range():
 func _target_in_attack_range():
 	return player != null and global_position.distance_to(player.global_position) < ATTACK_RANGE
 
+func drop_items():
+	EnemyGlobals.drop_items(self)
+
 # TODO: Change collision layers/masks to work and create/set groups "player_sword" and "player_hitbox" in player scene
 func _on_hitbox_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_sword"):
@@ -65,8 +68,6 @@ func _on_hitbox_area_area_entered(area: Area2D) -> void:
 			anim_tree.set("parameters/conditions/hurt", false)
 		else:
 			anim_tree.set("parameters/conditions/die", true)
-			await $AnimationTree.animation_finished
-			queue_free()
 
 func _on_sword_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_hitbox"):
