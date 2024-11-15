@@ -293,7 +293,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 7.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -328,7 +328,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 7.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -377,7 +377,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hurt",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -441,7 +441,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"skill",
-"speed": 6.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -494,7 +494,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"skill_attack",
-"speed": 7.0
+"speed": 13.0
 }]
 
 [sub_resource type="Animation" id="Animation_54s66"]
@@ -809,6 +809,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(74, 38)
 shape = SubResource("CapsuleShape2D_o40jr")
 
@@ -816,6 +817,7 @@ shape = SubResource("CapsuleShape2D_o40jr")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+visible = false
 position = Vector2(72, 34)
 shape = SubResource("RectangleShape2D_ghpr1")
 
