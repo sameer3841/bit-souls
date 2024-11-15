@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://fvjdoja8epna"]
+[gd_scene load_steps=10 format=4 uid="uid://fvjdoja8epna"]
 
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="1_i1ag5"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="2_4fmek"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddqslbphtyct7" path="res://scenes/death_boss.tscn" id="4_wqr7w"]
 [ext_resource type="PackedScene" uid="uid://lp5wg45x1d77" path="res://scenes/skeleton.tscn" id="5_ritvc"]
 [ext_resource type="PackedScene" uid="uid://s6lvlg058uf6" path="res://scenes/eye_beast.tscn" id="6_b831h"]
+[ext_resource type="PackedScene" uid="uid://bh5k5ieqitj2h" path="res://scenes/portal.tscn" id="7_3fv6y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1cko"]
 texture = ExtResource("1_i1ag5")
@@ -17,7 +18,7 @@ texture_region_size = Vector2i(32, 32)
 5:0/0 = 0
 6:0/0 = 0
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.6667, -16, 16, -16, 16, 16, -10.6667, 16)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:1/0 = 0
@@ -187,8 +188,10 @@ position = Vector2(573, 315)
 [node name="DeathBoss" parent="." instance=ExtResource("4_wqr7w")]
 position = Vector2(2345, -32)
 
-[node name="Player" parent="." instance=ExtResource("2_groux")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_groux")]
 position = Vector2(45, -73)
+respawnX = 45.0
+respawnY = -73.0
 
 [node name="Node" type="Node" parent="."]
 
@@ -215,9 +218,13 @@ offset_bottom = 126.0
 text = "C / V / LMB - attack"
 
 [node name="Skeleton" parent="." instance=ExtResource("5_ritvc")]
-position = Vector2(2615, -145)
+position = Vector2(2617, -135)
 player_path = NodePath("../Player")
 
 [node name="EyeBeast" parent="." instance=ExtResource("6_b831h")]
 position = Vector2(1518, -143)
 player_path = NodePath("../Player")
+
+[node name="portal" parent="." instance=ExtResource("7_3fv6y")]
+position = Vector2(3064, -156)
+next_level = "res://scenes/Level1.tscn"

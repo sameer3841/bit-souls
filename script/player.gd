@@ -3,11 +3,16 @@ extends CharacterBody2D
 var current_state = player_status.MOVE
 enum player_status {MOVE, JUMP, ATTACK, FALL}
 
+@export var respawnX: float
+@export var respawnY: float
+
 const SPEED = 260.0
 const JUMP_VELOCITY = -550.0
 const COMBO_TIMEOUT = 0.1
 
-var respawn_point = Vector2(45, -73)
+
+
+var respawn_point = Vector2(respawnX, respawnY)
 var coin_count = 0
 var combo_counter = 0
 var combo_timer := Timer.new()
@@ -20,7 +25,8 @@ func _ready():
 	combo_timer.one_shot = true
 	combo_timer.timeout.connect(_on_combo_timeout)
 
-func _process(delta):
+func _process(_delta):
+	respawn_point = Vector2(respawnX, respawnY)
 	if Input.is_action_just_pressed("jump"): current_state = player_status.JUMP
 	if Input.is_action_just_pressed("attack"): 
 		combo_counter += 1
