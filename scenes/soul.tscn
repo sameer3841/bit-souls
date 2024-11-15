@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp25m1hgml33l"]
+
+[ext_resource type="Script" path="res://script/soul.gd" id="1_scfx7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3m7q"]
+radius = 13.0
+
+[sub_resource type="Gradient" id="Gradient_oq78j"]
+offsets = PackedFloat32Array(0.344978, 0.663755)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7pxwe"]
+gradient = SubResource("Gradient_oq78j")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hojb6"]
+
+[node name="Soul" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_scfx7")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b3m7q")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1, 1)
+energy = 4.0
+texture = SubResource("GradientTexture2D_7pxwe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_hojb6")
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.477
+autostart = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
