@@ -55,7 +55,7 @@ func _target_in_attack_range():
 	return player != null and global_position.distance_to(player.global_position) < ATTACK_RANGE
 
 func drop_items():
-	EnemyGlobals.drop_items(self)
+	EnemyGlobals.drop_items(self, num_of_souls)
 
 # TODO: Change collision layers/masks to work and create/set groups "player_sword" and "player_hitbox" in player scene
 func _on_hitbox_area_area_entered(area: Area2D) -> void:

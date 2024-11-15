@@ -58,7 +58,7 @@ func attack():
 	projectile.global_rotation = global_rotation
 
 func drop_items():
-	EnemyGlobals.drop_items(self)
+	EnemyGlobals.drop_items(self, num_of_souls)
 
 func _on_hitbox_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_sword"):

@@ -9,8 +9,8 @@ func set_player():
 		print("Warning: Player node not found")
 
 # can be used to make enemies drop souls
-func drop_items(enemy):
-	for n in range(enemy.num_of_souls):
+func drop_items(enemy, num_of_souls):
+	for n in range(num_of_souls):
 		var soul = load("res://scenes/soul.tscn").instantiate()
 		enemy.get_parent().add_child(soul)
 		soul.global_position = Vector2(enemy.global_position.x + randf_range(-10, 10), enemy.global_position.y + randf_range(-10, 10))
