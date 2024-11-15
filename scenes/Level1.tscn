@@ -392,6 +392,7 @@ texture = ExtResource("2_gu88s")
 19:23/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ttufl"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c5blb")
 
 [node name="Node" type="Node"]
@@ -410,7 +411,7 @@ position = Vector2(2467, -590)
 texture = ExtResource("2_o8i88")
 
 [node name="Player" parent="." instance=ExtResource("7_2sw7f")]
-position = Vector2(60, 422)
+position = Vector2(177, 419)
 respawnX = 56.0
 respawnY = 422.0
 

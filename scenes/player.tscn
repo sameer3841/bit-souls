@@ -607,6 +607,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_j87cs"]
 resource_name = "air_atk"
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
