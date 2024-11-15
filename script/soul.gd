@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 		velocity = direction * pickup_speed
 	move_and_slide()
 
-# TODO: Figure out how to get the player's position.
 func player_in_pickup_range():
 	return global_position.distance_to(player.global_position) <= PICKUP_RANGE
 
@@ -43,6 +42,6 @@ func _on_timer_timeout() -> void:
 
 # TODO: Currently, it is only collected via sword swing. Figure out how to collect it by walking into it.
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	# increase number of souls by one
+	# increase number of collected souls by one
 	print("pickup")
 	queue_free()
