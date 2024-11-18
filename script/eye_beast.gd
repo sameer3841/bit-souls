@@ -1,23 +1,22 @@
 extends CharacterBody2D
 
-var player = null
+var player
 var state_machine
 var is_chasing
 const CHASE_RANGE = 400
 const TOO_CLOSE_RANGE = 200
 const TOO_FAR_RANGE = 250
 
-@export var player_path : NodePath
 @export var health = 3
 @export var speed = 200
+@export var num_of_souls = 20
 
 @onready var anim_tree = $AnimationTree
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_node_or_null(player_path)
-	if player == null:
-		print("Warning: Player node not found at path ", player_path)
+	EnemyGlobals.set_player() # there is probably a better place to put this line, but it works for now
+	player = EnemyGlobals.target_player
 	state_machine = anim_tree.get("parameters/playback")
 	is_chasing = false
 
@@ -27,13 +26,12 @@ func _physics_process(delta: float) -> void:
 		"Idle":
 			is_chasing = target_in_range()
 		"Move":
-			var target_position = Vector2(player.global_position.x, player.global_position.y + 30)
-			rotation = target_position.angle_to_point(position)
+			rotation = player.global_position.angle_to_point(position)
 			if target_too_close():
-				var direction = target_position.direction_to(position)
+				var direction = player.global_position.direction_to(position)
 				velocity = direction * speed
 			elif target_too_far():
-				var direction = position.direction_to(target_position)
+				var direction = position.direction_to(player.global_position)
 				velocity = direction * speed
 	
 	anim_tree.set("parameters/conditions/move", is_chasing)
@@ -58,6 +56,9 @@ func attack():
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = global_position
 	projectile.global_rotation = global_rotation
+
+func drop_items():
+	EnemyGlobals.drop_items(self, num_of_souls)
 
 func _on_hitbox_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_sword"):

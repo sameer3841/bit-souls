@@ -875,17 +875,18 @@ z_index = 10
 script = ExtResource("1_lxtkf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_w7yn8")
 animation = &"attack1"
 autoplay = "idle"
 frame = 10
 
 [node name="player_collision" type="CollisionShape2D" parent="."]
-position = Vector2(3, 41)
+position = Vector2(3, 2)
 shape = SubResource("CapsuleShape2D_gj1x1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -39)
 zoom = Vector2(1.5, 1.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -894,6 +895,7 @@ libraries = {
 }
 
 [node name="player_sword" type="Area2D" parent="." groups=["player_sword"]]
+position = Vector2(0, -39)
 
 [node name="player_sword_collision" type="CollisionShape2D" parent="player_sword"]
 position = Vector2(44, 21)

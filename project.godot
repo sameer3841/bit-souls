@@ -15,6 +15,11 @@ run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EnemyGlobals="*res://script/enemy_globals.gd"
+Inventory="*res://script/inventory.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
