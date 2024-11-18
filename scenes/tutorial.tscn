@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://fvjdoja8epna"]
+[gd_scene load_steps=11 format=4 uid="uid://fvjdoja8epna"]
 
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="1_i1ag5"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="2_4fmek"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://lp5wg45x1d77" path="res://scenes/skeleton.tscn" id="5_ritvc"]
 [ext_resource type="PackedScene" uid="uid://s6lvlg058uf6" path="res://scenes/eye_beast.tscn" id="6_b831h"]
 [ext_resource type="PackedScene" uid="uid://cp25m1hgml33l" path="res://scenes/soul.tscn" id="7_g8mnc"]
+[ext_resource type="PackedScene" uid="uid://dq4t2kk2gf06v" path="res://scenes/gui.tscn" id="8_crb7m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1cko"]
 texture = ExtResource("1_i1ag5")
@@ -238,3 +239,5 @@ position = Vector2(736, -128)
 
 [node name="Soul5" parent="Souls" instance=ExtResource("7_g8mnc")]
 position = Vector2(704, -128)
+
+[node name="GUI" parent="." instance=ExtResource("8_crb7m")]

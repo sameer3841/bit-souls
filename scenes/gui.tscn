@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq4t2kk2gf06v"]
+
+[ext_resource type="Script" path="res://script/gui.gd" id="1_bvm5c"]
+[ext_resource type="FontFile" uid="uid://diqo0p36vvsda" path="res://assets/Fonts/TrajanPro-Regular.ttf" id="2_hti2s"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_bvm5c")
+
+[node name="NumberOfSouls" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_hti2s")
+theme_override_font_sizes/font_size = 50
+text = "0"
