@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drq6rweun7p2n"]
+[gd_scene load_steps=10 format=3 uid="uid://drq6rweun7p2n"]
 
 [ext_resource type="Texture2D" uid="uid://cq5olaic420l" path="res://assets/Moon-Graveyard/Background_0.png" id="1_t7arf"]
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="2_gu88s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dns8dwrrqs0fg" path="res://assets/Moon-Graveyard/brush.png" id="3_1vgb0"]
 [ext_resource type="Texture2D" uid="uid://djmaj5pfqg72j" path="res://assets/Moon-Graveyard/Grass_background_2.png" id="4_vsab3"]
 [ext_resource type="Texture2D" uid="uid://d150lfusi11l2" path="res://assets/Moon-Graveyard/Salt.png" id="5_wuupm"]
+[ext_resource type="PackedScene" uid="uid://b3mpyiv8emgn2" path="res://scenes/player.tscn" id="7_2sw7f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5blb"]
 texture = ExtResource("2_gu88s")
@@ -391,6 +392,7 @@ texture = ExtResource("2_gu88s")
 19:23/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ttufl"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c5blb")
 
 [node name="Node" type="Node"]
@@ -407,6 +409,11 @@ texture = ExtResource("1_t7arf")
 [node name="Background1" type="Sprite2D" parent="."]
 position = Vector2(2467, -590)
 texture = ExtResource("2_o8i88")
+
+[node name="Player" parent="." instance=ExtResource("7_2sw7f")]
+position = Vector2(177, 419)
+respawnX = 56.0
+respawnY = 422.0
 
 [node name="Brush" type="Sprite2D" parent="."]
 position = Vector2(290, 493)

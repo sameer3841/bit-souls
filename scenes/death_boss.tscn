@@ -858,6 +858,7 @@ offset_bottom = 344.0
 text = "You've been cursed"
 
 [node name="debug" type="Label" parent="."]
+visible = false
 offset_left = 151.0
 offset_top = -69.0
 offset_right = 200.0
@@ -877,6 +878,9 @@ script = ExtResource("3_j7x4d")
 [node name="Hurt" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_j7x4d")
 
+[node name="Attack" type="Node2D" parent="FiniteStateMachine/Hurt"]
+script = ExtResource("3_j7x4d")
+
 [node name="Skill" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_j7x4d")
 
@@ -887,7 +891,4 @@ script = ExtResource("3_j7x4d")
 script = ExtResource("3_j7x4d")
 
 [node name="Death" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("3_j7x4d")
-
-[node name="Attack" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_j7x4d")

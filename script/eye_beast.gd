@@ -4,8 +4,8 @@ var player
 var state_machine
 var is_chasing
 const CHASE_RANGE = 400
-const TOO_CLOSE_RANGE = 150
-const TOO_FAR_RANGE = 200
+const TOO_CLOSE_RANGE = 200
+const TOO_FAR_RANGE = 250
 
 @export var health = 3
 @export var speed = 200
@@ -63,10 +63,11 @@ func drop_items():
 func _on_hitbox_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_sword"):
 		health -= 1
-		if health > 0:
+		if health >= 0:
 			anim_tree.set("parameters/conditions/hit", true)
 			await $AnimationTree.animation_finished
 			anim_tree.set("parameters/conditions/hit", false)
 		else:
-			anim_tree.set("parameters/conditions/hit", true)
 			anim_tree.set("parameters/conditions/death", true)
+			await $AnimationTree.animation_finished
+			queue_free()
