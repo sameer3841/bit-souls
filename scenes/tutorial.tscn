@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=11 format=4 uid="uid://fvjdoja8epna"]
+[gd_scene load_steps=12 format=4 uid="uid://fvjdoja8epna"]
 
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="1_i1ag5"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="2_4fmek"]
@@ -7,12 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ddqslbphtyct7" path="res://scenes/death_boss.tscn" id="4_wqr7w"]
 [ext_resource type="PackedScene" uid="uid://lp5wg45x1d77" path="res://scenes/skeleton.tscn" id="5_ritvc"]
 [ext_resource type="PackedScene" uid="uid://s6lvlg058uf6" path="res://scenes/eye_beast.tscn" id="6_b831h"]
-
+[ext_resource type="PackedScene" uid="uid://bh5k5ieqitj2h" path="res://scenes/portal.tscn" id="7_3fv6y"]
 [ext_resource type="PackedScene" uid="uid://cp25m1hgml33l" path="res://scenes/soul.tscn" id="7_g8mnc"]
 [ext_resource type="PackedScene" uid="uid://dq4t2kk2gf06v" path="res://scenes/gui.tscn" id="8_crb7m"]
-
-[ext_resource type="PackedScene" uid="uid://bh5k5ieqitj2h" path="res://scenes/portal.tscn" id="7_3fv6y"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1cko"]
 texture = ExtResource("1_i1ag5")
@@ -195,7 +191,7 @@ position = Vector2(573, 315)
 position = Vector2(2345, -32)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_groux")]
-position = Vector2(45, -73)
+position = Vector2(47, -33)
 respawnX = 45.0
 respawnY = -73.0
 
@@ -230,7 +226,6 @@ player_path = NodePath("../Player")
 [node name="EyeBeast" parent="." instance=ExtResource("6_b831h")]
 position = Vector2(1518, -143)
 
-
 [node name="Souls" type="Node" parent="."]
 
 [node name="Soul" parent="Souls" instance=ExtResource("7_g8mnc")]
@@ -250,9 +245,6 @@ position = Vector2(704, -128)
 
 [node name="GUI" parent="." instance=ExtResource("8_crb7m")]
 
-player_path = NodePath("../Player")
-
 [node name="portal" parent="." instance=ExtResource("7_3fv6y")]
-position = Vector2(3064, -156)
-next_level = "res://scenes/Level1.tscn"
-
+position = Vector2(485, -60)
+next_level = "res://scenes/lv_l_1.tscn"
