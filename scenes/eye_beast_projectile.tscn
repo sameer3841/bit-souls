@@ -205,7 +205,7 @@ animation = &"Active"
 autoplay = "Active"
 frame = 2
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["enemy_attack"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708

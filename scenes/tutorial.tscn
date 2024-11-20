@@ -221,7 +221,6 @@ text = "C / V / LMB - attack"
 
 [node name="Skeleton" parent="." instance=ExtResource("5_ritvc")]
 position = Vector2(2617, -135)
-player_path = NodePath("../Player")
 
 [node name="EyeBeast" parent="." instance=ExtResource("6_b831h")]
 position = Vector2(1518, -143)
@@ -246,5 +245,7 @@ position = Vector2(704, -128)
 [node name="GUI" parent="." instance=ExtResource("8_crb7m")]
 
 [node name="portal" parent="." instance=ExtResource("7_3fv6y")]
+
 position = Vector2(485, -60)
 next_level = "res://scenes/lv_l_1.tscn"
+

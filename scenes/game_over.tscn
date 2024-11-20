@@ -1,0 +1,228 @@
+[gd_scene load_steps=20 format=3 uid="uid://cnxxrowb4p01p"]
+
+[ext_resource type="Texture2D" uid="uid://cokgbw8dwbnib" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_1.png" id="1_8j6rs"]
+[ext_resource type="Script" path="res://script/game_over.gd" id="1_se2qk"]
+[ext_resource type="FontFile" uid="uid://diqo0p36vvsda" path="res://assets/Fonts/TrajanPro-Regular.ttf" id="2_21mnp"]
+[ext_resource type="Texture2D" uid="uid://hievlxw4p4xm" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_2.png" id="2_in7bf"]
+[ext_resource type="Texture2D" uid="uid://bxwa4m4cg1ci5" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_3.png" id="3_omc3i"]
+[ext_resource type="Texture2D" uid="uid://3o644w4bnh7x" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_4.png" id="4_chi6v"]
+[ext_resource type="Texture2D" uid="uid://bf6yimkb4vnu3" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_5.png" id="5_03q0s"]
+[ext_resource type="Texture2D" uid="uid://buo0e2mqm7khl" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_6.png" id="6_gdipj"]
+[ext_resource type="Texture2D" uid="uid://bh0lgf6n6w3te" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_7.png" id="7_q20ok"]
+[ext_resource type="Texture2D" uid="uid://8jet0a8g7ftx" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_8.png" id="8_r16t8"]
+[ext_resource type="Texture2D" uid="uid://73dc8fybgivm" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_9.png" id="9_yt870"]
+[ext_resource type="Texture2D" uid="uid://dtlvyqyxdlwpe" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_10.png" id="10_0ga5q"]
+[ext_resource type="Texture2D" uid="uid://drpcill17pfk" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_11.png" id="11_6oefs"]
+[ext_resource type="Texture2D" uid="uid://bjdg4t3ln1d4i" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_12.png" id="12_c5ssq"]
+[ext_resource type="Texture2D" uid="uid://dj0esfaddhimp" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_13.png" id="13_wijmf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hlql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8j6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_in7bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_omc3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_chi6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_03q0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gdipj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q20ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r16t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yt870")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0ga5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6oefs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_c5ssq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wijmf")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_dkj1t"]
+resource_name = "GameOver"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"death", &"death", &"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 0, 12]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"return_to_main_menu"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("you died:theme_override_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0.647059, 0, 0, 1), Color(1, 0, 0, 1), Color(0.647059, 0, 0, 1), Color(1, 0, 0, 1), Color(0.647059, 0, 0, 1), Color(1, 0, 0, 1), Color(0.647059, 0, 0, 1), Color(1, 0, 0, 1), Color(0.647059, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("you died:theme_override_font_sizes/font_size")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [60, 80]
+}
+
+[sub_resource type="Animation" id="Animation_0ljpd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("you died:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("you died:theme_override_font_sizes/font_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [60]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxj1y"]
+_data = {
+"GameOver": SubResource("Animation_dkj1t"),
+"RESET": SubResource("Animation_0ljpd")
+}
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_se2qk")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -384.0
+offset_top = -216.0
+offset_right = 384.0
+offset_bottom = 216.0
+color = Color(0, 0, 0, 1)
+
+[node name="you died" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -128.0
+offset_right = 197.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_21mnp")
+theme_override_font_sizes/font_size = 60
+text = "you died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6hlql")
+animation = &"death"
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSprite"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oxj1y")
+}
