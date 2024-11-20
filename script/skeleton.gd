@@ -7,7 +7,6 @@ var state_machine
 const ATTACK_RANGE = 50
 const WALK_RANGE = 400
 
-@export var player_path : NodePath
 @export var health = 3
 @export var speed = 85
 @export var num_of_souls = 10
@@ -69,7 +68,7 @@ func _on_hitbox_area_area_entered(area: Area2D) -> void:
 		else:
 			anim_tree.set("parameters/conditions/die", true)
 
+
 func _on_sword_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_hitbox"):
-		player.health -= 1
-		player.hurt()
+		Stats.take_damage(1)

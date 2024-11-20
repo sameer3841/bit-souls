@@ -15,7 +15,8 @@ func destroy():
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	destroy()
-	
-#TODO: add function to destroy the projectile when it collides with the ground or player
-#func _on_area_2d_area_entered(area: Area2D) -> void:
-#	destroy()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player_hitbox"):
+		Stats.take_damage(1)
+		destroy()

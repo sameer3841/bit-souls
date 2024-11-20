@@ -596,7 +596,8 @@ script = ExtResource("1_1e2o3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("5_u388h")
 hframes = 9
-frame = 6
+frame = 3
+
 [node name="SkeletonCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_1e1xn")

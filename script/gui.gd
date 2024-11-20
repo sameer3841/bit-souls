@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$NumberOfSouls.text = str(Inventory.num_of_souls)
+	$NumberOfSouls.text = str(Stats.num_of_souls)
