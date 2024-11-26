@@ -190,7 +190,7 @@ position = Vector2(573, 315)
 [node name="DeathBoss" parent="." instance=ExtResource("4_wqr7w")]
 position = Vector2(2345, -32)
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_groux")]
+[node name="Player" parent="." instance=ExtResource("2_groux")]
 position = Vector2(47, -33)
 respawnX = 45.0
 respawnY = -73.0
@@ -245,7 +245,5 @@ position = Vector2(704, -128)
 [node name="GUI" parent="." instance=ExtResource("8_crb7m")]
 
 [node name="portal" parent="." instance=ExtResource("7_3fv6y")]
-
 position = Vector2(485, -60)
 next_level = "res://scenes/lv_l_1.tscn"
-

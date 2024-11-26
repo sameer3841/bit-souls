@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://dka2mnr6wikw4"]
+
+[ext_resource type="Texture2D" uid="uid://c38t7tijkdr4u" path="res://assets/Shop/shop_anim.png" id="1_86x2p"]
+[ext_resource type="Script" path="res://script/shop.gd" id="1_ud0vv"]
+[ext_resource type="FontFile" uid="uid://diqo0p36vvsda" path="res://assets/Fonts/TrajanPro-Regular.ttf" id="3_pwh18"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcyo6"]
+atlas = ExtResource("1_86x2p")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he3t1"]
+atlas = ExtResource("1_86x2p")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy0yn"]
+atlas = ExtResource("1_86x2p")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1gwa"]
+atlas = ExtResource("1_86x2p")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gtgf"]
+atlas = ExtResource("1_86x2p")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38sss"]
+atlas = ExtResource("1_86x2p")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sci2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcyo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he3t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy0yn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1gwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gtgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38sss")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfpsm"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.434656, 0.364958, 0.121409, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thbji"]
+size = Vector2(128, 24)
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_ud0vv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_sci2f")
+autoplay = "default"
+frame_progress = 0.745393
+
+[node name="InteractLabel" type="Label" parent="."]
+visible = false
+offset_left = -16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_pwh18")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfpsm")
+text = "Z"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_thbji")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

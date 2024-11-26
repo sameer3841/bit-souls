@@ -26,6 +26,8 @@ func _ready():
 
 func _process(_delta):
 	respawn_point = Vector2(respawnX, respawnY)
+	if Input.is_action_just_pressed("use_item"):
+		Stats.use_flask()
 	if Input.is_action_just_pressed("jump") && is_on_floor() && current_state == player_status.MOVE:
 		current_state = player_status.JUMP
 	if Input.is_action_just_pressed("attack"): 
@@ -155,8 +157,7 @@ func hurt():
 		game_over()
 
 func game_over():
-	Stats.health = Stats.max_health
-	Stats.num_of_souls = 0
+	Stats.reset()
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _on_hitbox_area_area_entered(area: Area2D) -> void:

@@ -1,0 +1,273 @@
+[gd_scene load_steps=23 format=3 uid="uid://6bjyghddnhwi"]
+
+[ext_resource type="Script" path="res://script/shop_menu.gd" id="1_qd1hm"]
+[ext_resource type="FontFile" uid="uid://diqo0p36vvsda" path="res://assets/Fonts/TrajanPro-Regular.ttf" id="2_4d2jd"]
+[ext_resource type="PackedScene" uid="uid://cp25m1hgml33l" path="res://scenes/soul.tscn" id="3_qeujv"]
+[ext_resource type="Texture2D" uid="uid://doruylqxonn8h" path="res://assets/Red Potions/poç╞o vermelha.png" id="4_5d67n"]
+
+[sub_resource type="Animation" id="Animation_lrafq"]
+resource_name = "TransitionIn"
+
+[sub_resource type="Animation" id="Animation_044pe"]
+resource_name = "TransitionOut"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyv4u"]
+_data = {
+"TransitionIn": SubResource("Animation_lrafq"),
+"TransitionOut": SubResource("Animation_044pe")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7ivu"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.434656, 0.364958, 0.121409, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64poc"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.434656, 0.364958, 0.121409, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnw0a"]
+bg_color = Color(0.262932, 0.262932, 0.262932, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.435294, 0.364706, 0.121569, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl1q7"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.435294, 0.364706, 0.121569, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3kw5"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.435294, 0.364706, 0.121569, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1h42"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.435294, 0.364706, 0.121569, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyve4"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnscd"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47kuq"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0irt1"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpmxe"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0mxt"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl2vq"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbpbt"]
+atlas = ExtResource("4_5d67n")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxdu6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyve4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnscd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47kuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0irt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpmxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0mxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl2vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbpbt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="ShopMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_qd1hm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qyv4u")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 960.0
+offset_bottom = 512.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7ivu")
+
+[node name="Souls" type="Node2D" parent="Control"]
+position = Vector2(208, 144)
+
+[node name="Panel" type="Panel" parent="Control/Souls"]
+offset_right = 192.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_64poc")
+
+[node name="NumberOfSouls" type="Label" parent="Control/Souls"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 184.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_4d2jd")
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Soul" parent="Control/Souls" instance=ExtResource("3_qeujv")]
+position = Vector2(16, 24)
+
+[node name="CloseButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 784.0
+offset_top = 144.0
+offset_right = 904.0
+offset_bottom = 192.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_4d2jd")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnw0a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bl1q7")
+text = "close"
+
+[node name="SelectedLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 208.0
+offset_right = 896.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("2_4d2jd")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.4
+anchor_top = 8.8
+anchor_right = 14.4
+anchor_bottom = 8.8
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("2_4d2jd")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.4
+anchor_top = 10.0
+anchor_right = 14.4
+anchor_bottom = 10.0
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("2_4d2jd")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PurchaseButton" type="Button" parent="Control"]
+offset_left = 472.0
+offset_top = 448.0
+offset_right = 680.0
+offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("2_4d2jd")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnw0a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q3kw5")
+text = "purchase"
+
+[node name="RedFlaskButton" type="Button" parent="Control"]
+offset_left = 544.0
+offset_top = 256.0
+offset_right = 608.0
+offset_bottom = 320.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnw0a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s1h42")
+
+[node name="RedFlaskSprite" type="AnimatedSprite2D" parent="Control/RedFlaskButton"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_rxdu6")
+autoplay = "default"
+frame_progress = 0.463892
+
+[connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Control/PurchaseButton" to="." method="_on_purchase_button_pressed"]
+[connection signal="pressed" from="Control/RedFlaskButton" to="." method="_on_red_potion_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dgkw6omri2yfd"]
+[gd_scene load_steps=14 format=4 uid="uid://dgkw6omri2yfd"]
 
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="1_cwwq8"]
 [ext_resource type="Texture2D" uid="uid://glgb8g4wa3w6" path="res://assets/Moon-Graveyard/Grass_background_1.png" id="2_n5ld2"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://s6lvlg058uf6" path="res://scenes/eye_beast.tscn" id="7_4qlx7"]
 [ext_resource type="PackedScene" uid="uid://b3mpyiv8emgn2" path="res://scenes/player.tscn" id="7_m7gy3"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="7_mhw56"]
+[ext_resource type="PackedScene" uid="uid://dka2mnr6wikw4" path="res://scenes/shop.tscn" id="10_3we7h"]
+[ext_resource type="PackedScene" uid="uid://dq4t2kk2gf06v" path="res://scenes/gui.tscn" id="11_qpcif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3736"]
 texture = ExtResource("1_cwwq8")
@@ -310,3 +312,8 @@ respawnY = 60.0
 
 [node name="Moon_Graveyard_Parallax" parent="." instance=ExtResource("7_mhw56")]
 position = Vector2(576, 242)
+
+[node name="Shop" parent="." instance=ExtResource("10_3we7h")]
+position = Vector2(130, -724)
+
+[node name="GUI" parent="." instance=ExtResource("11_qpcif")]
