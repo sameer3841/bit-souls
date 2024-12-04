@@ -8,4 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$NumberOfSouls.text = str(Stats.num_of_souls)
+	$Souls/NumberOfSouls.text = str(Stats.num_of_souls)
+	$Item/NumberOfItem.text = str(Stats.num_of_flasks)
+
+
+func _on_item_button_pressed() -> void:
+	Stats.use_flask()
