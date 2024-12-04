@@ -157,6 +157,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 128.0
 offset_right = 960.0
@@ -243,6 +244,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PurchaseButton" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 472.0
 offset_top = 448.0
 offset_right = 680.0
@@ -254,6 +256,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_q3kw5")
 text = "purchase"
 
 [node name="RedFlaskButton" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 256.0
 offset_right = 608.0

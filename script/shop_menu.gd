@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	$Control/Souls/NumberOfSouls.text = str(Stats.num_of_souls)
 	match selected_item:
 		"Red Flask":
-			cost = 75
+			cost = 50
 			$Control/SelectedLabel.text = "selected: red flask"
 			$Control/DescriptionLabel.text = "drink to regain some health"
 			$Control/CostLabel.text = "cost: " + str(cost)
