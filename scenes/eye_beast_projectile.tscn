@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dnx5dw3uet8sy"]
+[gd_scene load_steps=21 format=3 uid="uid://dnx5dw3uet8sy"]
 
 [ext_resource type="Script" path="res://script/eye_beast_projectile.gd" id="1_j3v6g"]
 [ext_resource type="Texture2D" uid="uid://chk6v4t4s1qpn" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Void Ball Projectile1.png" id="1_y180f"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dvamvbpmkcfco" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Projectile Destroyed1.png" id="4_ovni0"]
 [ext_resource type="Texture2D" uid="uid://di8g5jf0ge2y2" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Projectile Destroyed2.png" id="5_p4x86"]
 [ext_resource type="Texture2D" uid="uid://pa0qv2qr1noa" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Projectile Destroyed3.png" id="6_rbabo"]
+[ext_resource type="AudioStream" uid="uid://cmc4vcfcs1kia" path="res://Music/ghast-fireball.mp3" id="8_5aboa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xwxqq"]
 animations = [{
@@ -224,6 +225,11 @@ parameters/conditions/destroyed = false
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 rotation = 0.00243073
 rect = Rect2(-30, -30, 60, 60)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5aboa")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

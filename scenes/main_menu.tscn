@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://pj0c0k3v3css"]
+[gd_scene load_steps=13 format=3 uid="uid://pj0c0k3v3css"]
 
 [ext_resource type="Script" path="res://script/main_menu.gd" id="1_21jcr"]
 [ext_resource type="FontFile" uid="uid://beyn6bf08ad76" path="res://assets/Fonts/TrajanPro-Bold.otf" id="1_txsb8"]
 [ext_resource type="FontFile" uid="uid://diqo0p36vvsda" path="res://assets/Fonts/TrajanPro-Regular.ttf" id="3_1mhpf"]
+[ext_resource type="AudioStream" uid="uid://depxsatughdy3" path="res://Music/main_screen_sound.mp3" id="4_spukr"]
 
 [sub_resource type="Environment" id="Environment_ycqi1"]
 background_mode = 3
@@ -126,7 +127,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxFlat_veqyu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_veqyu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uxilu")
-text = "play"
+text = "play demo"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -145,6 +146,10 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_veqyu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_veqyu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wy7e4")
 text = "quit"
+
+[node name="MainScreenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_spukr")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
