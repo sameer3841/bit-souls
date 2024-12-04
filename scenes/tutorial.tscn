@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://fvjdoja8epna"]
+[gd_scene load_steps=15 format=4 uid="uid://fvjdoja8epna"]
 
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="1_i1ag5"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="2_4fmek"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cp25m1hgml33l" path="res://scenes/soul.tscn" id="7_g8mnc"]
 [ext_resource type="PackedScene" uid="uid://dq4t2kk2gf06v" path="res://scenes/gui.tscn" id="8_crb7m"]
 [ext_resource type="PackedScene" uid="uid://dka2mnr6wikw4" path="res://scenes/shop.tscn" id="10_h05iu"]
+[ext_resource type="AudioStream" uid="uid://y3l82ct5b3m1" path="res://Music/tutorial_music.mp3" id="12_k5x86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1cko"]
 texture = ExtResource("1_i1ag5")
@@ -278,3 +279,7 @@ position = Vector2(1851, 27)
 
 [node name="Skeleton4" parent="." instance=ExtResource("5_ritvc")]
 position = Vector2(883, 95)
+
+[node name="TutorialMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_k5x86")
+autoplay = true
