@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://b3mpyiv8emgn2"]
+[gd_scene load_steps=147 format=3 uid="uid://b3mpyiv8emgn2"]
 
 [ext_resource type="Texture2D" uid="uid://jcqlyq3c22b8" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_1.png" id="1_fydwy"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_lxtkf"]
@@ -132,6 +132,7 @@
 [ext_resource type="Texture2D" uid="uid://fokvvdvsvhxy" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_16.png" id="111_yacyr"]
 [ext_resource type="Texture2D" uid="uid://dke5y3i27fxjm" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_17.png" id="112_har18"]
 [ext_resource type="Texture2D" uid="uid://bx53037x4ykfu" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_18.png" id="113_0d5wp"]
+[ext_resource type="AudioStream" uid="uid://b4ikclod7wdlx" path="res://Music/hitmarker_2.mp3" id="133_ssmdo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w7yn8"]
 animations = [{
@@ -1231,6 +1232,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("133_ssmdo")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ccynt"]
 resource_name = "roll"
@@ -1337,5 +1353,8 @@ one_way_collision_margin = 0.0
 [node name="hitbox_collision" type="CollisionShape2D" parent="hitbox_area"]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_8wbdl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [connection signal="area_entered" from="hitbox_area" to="." method="_on_hitbox_area_area_entered"]
