@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp25m1hgml33l"]
+[gd_scene load_steps=7 format=3 uid="uid://cp25m1hgml33l"]
 
 [ext_resource type="Script" path="res://script/soul.gd" id="1_scfx7"]
+[ext_resource type="AudioStream" uid="uid://cm5sor3dvohrc" path="res://Music/soul.mp3" id="2_moqkc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3m7q"]
 radius = 13.0
@@ -40,6 +41,10 @@ offset_bottom = 8.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.477
 autostart = true
+
+[node name="Soul" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_moqkc")
+autoplay = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
