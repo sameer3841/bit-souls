@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnxxrowb4p01p"]
+[gd_scene load_steps=21 format=3 uid="uid://cnxxrowb4p01p"]
 
 [ext_resource type="Texture2D" uid="uid://cokgbw8dwbnib" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_1.png" id="1_8j6rs"]
 [ext_resource type="Script" path="res://script/game_over.gd" id="1_se2qk"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://drpcill17pfk" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_11.png" id="11_6oefs"]
 [ext_resource type="Texture2D" uid="uid://bjdg4t3ln1d4i" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_12.png" id="12_c5ssq"]
 [ext_resource type="Texture2D" uid="uid://dj0esfaddhimp" path="res://assets/Elementals_fire_knight_FREE_v1.1/png/fire_knight/11_death/death_13.png" id="13_wijmf"]
+[ext_resource type="AudioStream" uid="uid://bo4h3iyt40tk6" path="res://Music/game_over_sound.mp3" id="16_qlhei"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6hlql"]
 animations = [{
@@ -226,3 +227,7 @@ zoom = Vector2(1.5, 1.5)
 libraries = {
 "": SubResource("AnimationLibrary_oxj1y")
 }
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_qlhei")
+autoplay = true
