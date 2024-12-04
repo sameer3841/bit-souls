@@ -381,7 +381,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("24_irexm")
 }],
-"loop": true,
+"loop": false,
 "name": &"falling",
 "speed": 7.0
 }, {
