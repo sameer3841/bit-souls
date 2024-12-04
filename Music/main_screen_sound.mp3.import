@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/main_screen_sound.mp3-dcaa9998b7f008a4d9fed52
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
