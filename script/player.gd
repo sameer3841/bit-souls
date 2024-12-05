@@ -46,7 +46,7 @@ func respawn():
 
 func _physics_process(delta: float) -> void:
 
-	if not is_on_floor(): velocity += get_gravity() * delta
+	velocity += get_gravity() * delta
 	if velocity.x < 0:
 		$player_sword.rotation_degrees = 180
 	if velocity.x > 0:
@@ -62,8 +62,10 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.flip_h = velocity.x < 0
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED * 1)
-			if velocity.y > 0:
+			if velocity.y > 0 && !is_on_floor():
 				current_state = player_status.FALL
+			if is_on_floor():
+				current_state = player_status.MOVE
 			
 			
 		player_status.FALL:
@@ -98,8 +100,6 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor() and Input.is_action_just_pressed("jump"):
 				velocity.y = JUMP_VELOCITY
 				current_state = player_status.JUMP
-			elif not is_on_floor():
-				current_state = player_status.FALL
 				
 		player_status.ATTACK:
 			handle_combo()

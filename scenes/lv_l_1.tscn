@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://s6lvlg058uf6" path="res://scenes/eye_beast.tscn" id="7_4qlx7"]
 [ext_resource type="PackedScene" uid="uid://b3mpyiv8emgn2" path="res://scenes/player.tscn" id="7_m7gy3"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="7_mhw56"]
-[ext_resource type="PackedScene" uid="uid://dka2mnr6wikw4" path="res://scenes/shop.tscn" id="10_3we7h"]
+[ext_resource type="PackedScene" path="res://scenes/shop.tscn" id="10_3we7h"]
 [ext_resource type="PackedScene" uid="uid://dq4t2kk2gf06v" path="res://scenes/gui.tscn" id="11_qpcif"]
 [ext_resource type="AudioStream" uid="uid://dkl45ljha0ecg" path="res://Music/level_1_music.mp3" id="13_2t3jk"]
 
