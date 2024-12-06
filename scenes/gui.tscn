@@ -5,18 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cp25m1hgml33l" path="res://scenes/soul.tscn" id="3_tkcr8"]
 [ext_resource type="Texture2D" uid="uid://doruylqxonn8h" path="res://assets/Red Potions/poç╞o vermelha.png" id="4_8wosn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj5aa"]
-bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
-border_width_top = 1
-border_width_bottom = 1
-border_color = Color(0.434656, 0.364958, 0.121409, 1)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgl4f"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xggeq"]
 bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
 border_width_top = 1
@@ -26,6 +14,8 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgl4f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1edw"]
 bg_color = Color(0.262932, 0.262932, 0.262932, 0.784314)
@@ -101,6 +91,14 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mraim"]
+bg_color = Color(0.318058, 0, 0.0424047, 1)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.434656, 0.364958, 0.121409, 1)
+corner_radius_top_left = 1
+corner_radius_bottom_left = 1
+
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_bvm5c")
 
@@ -110,7 +108,7 @@ position = Vector2(936, 576)
 [node name="Panel" type="Panel" parent="Souls"]
 offset_right = 192.0
 offset_bottom = 48.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_gj5aa")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xggeq")
 
 [node name="NumberOfSouls" type="Label" parent="Souls"]
 offset_left = 8.0
@@ -156,5 +154,16 @@ theme_override_font_sizes/font_size = 35
 text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 320.0
+offset_bottom = 56.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xggeq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mraim")
+max_value = 5.0
+value = 5.0
+show_percentage = false
 
 [connection signal="pressed" from="Item/ItemButton" to="." method="_on_item_button_pressed"]

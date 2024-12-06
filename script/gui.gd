@@ -10,6 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Souls/NumberOfSouls.text = str(Stats.num_of_souls)
 	$Item/NumberOfItem.text = str(Stats.num_of_flasks)
+	$HealthBar.max_value = Stats.max_health
+	$HealthBar.value = Stats.health
 
 
 func _on_item_button_pressed() -> void:
