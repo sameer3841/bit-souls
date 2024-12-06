@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=4 uid="uid://bpm3s516cg2jc"]
 
-[ext_resource type="PackedScene" uid="uid://ddqslbphtyct7" path="res://scenes/death_boss.tscn" id="1_pnuav"]
 [ext_resource type="PackedScene" uid="uid://db1et6nvw7t8o" path="res://scenes/moon_graveyard_parallax.tscn" id="1_tlvjx"]
 [ext_resource type="Texture2D" uid="uid://boycao4gwuda7" path="res://assets/Moon-Graveyard/Tiles.png" id="2_a648i"]
 [ext_resource type="Texture2D" uid="uid://d150lfusi11l2" path="res://assets/Moon-Graveyard/Salt.png" id="4_q4kwi"]
 [ext_resource type="PackedScene" uid="uid://b3mpyiv8emgn2" path="res://scenes/player.tscn" id="5_ta80m"]
 [ext_resource type="PackedScene" uid="uid://lp5wg45x1d77" path="res://scenes/skeleton.tscn" id="6_w5g3b"]
+[ext_resource type="AudioStream" uid="uid://d2w6x0d62py7q" path="res://Music/boss_room1.mp3" id="7_rvmsb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8b4i"]
 texture = ExtResource("2_a648i")
@@ -165,10 +165,7 @@ sources/0 = SubResource("TileSetAtlasSource_g8b4i")
 [node name="BossRoom" type="Node2D"]
 
 [node name="Moon_Graveyard_Parallax" parent="." instance=ExtResource("1_tlvjx")]
-position = Vector2(489, 405)
-
-[node name="DeathBoss" parent="." instance=ExtResource("1_pnuav")]
-position = Vector2(809, 259)
+position = Vector2(586, 319)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 
@@ -187,7 +184,7 @@ tile_map_data = PackedByteArray("AAACAAUAAAAFAAkAAAACAAYAAAAIAAEAAAADAAUAAAADAAk
 tile_set = SubResource("TileSet_ldoey")
 
 [node name="Player" parent="." instance=ExtResource("5_ta80m")]
-position = Vector2(136, 221)
+position = Vector2(133, 259)
 
 [node name="Skeleton" parent="." instance=ExtResource("6_w5g3b")]
 position = Vector2(111, 478)
@@ -242,3 +239,8 @@ position = Vector2(813, 351)
 
 [node name="Skeleton18" parent="." instance=ExtResource("6_w5g3b")]
 position = Vector2(707, 381)
+
+[node name="BossRoom1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rvmsb")
+volume_db = -10.0
+autoplay = true

@@ -18,7 +18,7 @@ glow_levels/7 = 16.0
 glow_normalized = true
 glow_intensity = 4.0
 glow_strength = 0.35
-glow_bloom = 1.0
+glow_bloom = 0.42
 glow_blend_mode = 0
 
 [sub_resource type="Gradient" id="Gradient_k3j6a"]
