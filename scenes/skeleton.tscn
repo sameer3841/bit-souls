@@ -1,10 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://lp5wg45x1d77"]
+[gd_scene load_steps=44 format=3 uid="uid://lp5wg45x1d77"]
 
-[ext_resource type="Script" path="res://skeleton.gd" id="1_1e2o3"]
+[ext_resource type="Script" path="res://script/skeleton.gd" id="1_1e2o3"]
 [ext_resource type="Texture2D" uid="uid://ddrbrej8qab43" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Idle.png" id="2_aaysq"]
 [ext_resource type="Texture2D" uid="uid://bnnm7ni5qmvuw" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Walk.png" id="3_b582s"]
 [ext_resource type="Texture2D" uid="uid://bg16quqnbmqq5" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Attack1.png" id="4_cu22p"]
 [ext_resource type="Texture2D" uid="uid://dtmqxma54y5j7" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Attack2.png" id="5_u388h"]
+[ext_resource type="AudioStream" uid="uid://b4ikclod7wdlx" path="res://Music/hitmarker_2.mp3" id="6_ibt87"]
 [ext_resource type="Texture2D" uid="uid://co1jl7ljb1u8i" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Hurt.png" id="6_rfwkj"]
 [ext_resource type="Texture2D" uid="uid://blwao1pjj12e2" path="res://assets/Skeleton_Sword/Skeleton_White/Skeleton_01_White_Die.png" id="7_erx0y"]
 
@@ -58,7 +59,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("SwordArea/SwordCollision:disabled")
+tracks/3/path = NodePath("SwordArea/sword_collision:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -123,7 +124,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SwordArea/SwordCollision:disabled")
+tracks/4/path = NodePath("SwordArea/sword_collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -188,7 +189,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SwordArea/SwordCollision:disabled")
+tracks/4/path = NodePath("SwordArea/sword_collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -253,7 +254,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SwordArea/SwordCollision:disabled")
+tracks/4/path = NodePath("SwordArea/sword_collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -261,6 +262,23 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.08333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"drop_items"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_5oe8d"]
@@ -318,7 +336,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SwordArea/SwordCollision:disabled")
+tracks/4/path = NodePath("SwordArea/sword_collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -327,6 +345,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_ibt87")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_xkt6m"]
 resource_name = "idle"
@@ -384,7 +417,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SwordArea/SwordCollision:disabled")
+tracks/4/path = NodePath("SwordArea/sword_collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -450,7 +483,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SwordArea/SwordCollision:disabled")
+tracks/4/path = NodePath("SwordArea/sword_collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -587,7 +620,7 @@ shape = SubResource("RectangleShape2D_1e1xn")
 
 [node name="SwordArea" type="Area2D" parent="." groups=["enemy_attack"]]
 
-[node name="SwordCollision" type="CollisionShape2D" parent="SwordArea"]
+[node name="sword_collision" type="CollisionShape2D" parent="SwordArea"]
 position = Vector2(19, 0)
 shape = SubResource("RectangleShape2D_q311p")
 
@@ -611,6 +644,9 @@ parameters/conditions/die = false
 parameters/conditions/hurt = false
 parameters/conditions/idle = false
 parameters/conditions/walk = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -30.0
 
 [connection signal="area_entered" from="SwordArea" to="." method="_on_sword_area_area_entered"]
 [connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]

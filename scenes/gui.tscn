@@ -1,0 +1,169 @@
+[gd_scene load_steps=18 format=3 uid="uid://dq4t2kk2gf06v"]
+
+[ext_resource type="Script" path="res://script/gui.gd" id="1_bvm5c"]
+[ext_resource type="FontFile" uid="uid://diqo0p36vvsda" path="res://assets/Fonts/TrajanPro-Regular.ttf" id="2_hti2s"]
+[ext_resource type="PackedScene" uid="uid://cp25m1hgml33l" path="res://scenes/soul.tscn" id="3_tkcr8"]
+[ext_resource type="Texture2D" uid="uid://doruylqxonn8h" path="res://assets/Red Potions/poç╞o vermelha.png" id="4_8wosn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xggeq"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.435294, 0.364706, 0.121569, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgl4f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1edw"]
+bg_color = Color(0.262932, 0.262932, 0.262932, 0.784314)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.435294, 0.364706, 0.121569, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiagu"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbj6j"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef842"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pgdi"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjxav"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec813"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk1ql"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcby8"]
+atlas = ExtResource("4_8wosn")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2wkd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiagu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbj6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef842")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pgdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjxav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec813")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk1ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcby8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mraim"]
+bg_color = Color(0.318058, 0, 0.0424047, 1)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.434656, 0.364958, 0.121409, 1)
+corner_radius_top_left = 1
+corner_radius_bottom_left = 1
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_bvm5c")
+
+[node name="Souls" type="Node2D" parent="."]
+position = Vector2(936, 576)
+
+[node name="Panel" type="Panel" parent="Souls"]
+offset_right = 192.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xggeq")
+
+[node name="NumberOfSouls" type="Label" parent="Souls"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 184.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_hti2s")
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Soul" parent="Souls" instance=ExtResource("3_tkcr8")]
+position = Vector2(16, 24)
+
+[node name="Item" type="Node2D" parent="."]
+position = Vector2(24, 472)
+
+[node name="ItemButton" type="Button" parent="Item"]
+offset_right = 112.0
+offset_bottom = 152.0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kgl4f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_xggeq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xggeq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a1edw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xggeq")
+
+[node name="CurrentItem" type="AnimatedSprite2D" parent="Item"]
+position = Vector2(56, 76)
+scale = Vector2(5.5, 5.5)
+sprite_frames = SubResource("SpriteFrames_i2wkd")
+autoplay = "default"
+frame_progress = 0.169143
+
+[node name="NumberOfItem" type="Label" parent="Item"]
+offset_left = 8.0
+offset_top = 112.0
+offset_right = 104.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("2_hti2s")
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 320.0
+offset_bottom = 56.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xggeq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mraim")
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
+[connection signal="pressed" from="Item/ItemButton" to="." method="_on_item_button_pressed"]

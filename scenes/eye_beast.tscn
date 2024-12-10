@@ -1,0 +1,809 @@
+[gd_scene load_steps=98 format=3 uid="uid://s6lvlg058uf6"]
+
+[ext_resource type="Texture2D" uid="uid://dbcr77ki083j7" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack1.png" id="1_lw6e6"]
+[ext_resource type="Script" path="res://script/eye_beast.gd" id="1_pr1g3"]
+[ext_resource type="Texture2D" uid="uid://c32rr835r8j53" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle1.png" id="1_uxr05"]
+[ext_resource type="Texture2D" uid="uid://b75lilkiku23m" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack2.png" id="2_5la2q"]
+[ext_resource type="Texture2D" uid="uid://bj20pb4fy7tvo" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle2.png" id="2_6chcj"]
+[ext_resource type="Texture2D" uid="uid://bxa27g54f8k3y" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack3.png" id="3_phdyf"]
+[ext_resource type="Texture2D" uid="uid://bdv771fcgu3a2" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle3.png" id="3_xk72x"]
+[ext_resource type="Texture2D" uid="uid://o12qv04fito7" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack4.png" id="4_4g42w"]
+[ext_resource type="Texture2D" uid="uid://v027ym4pqbbs" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle4.png" id="4_w4y6o"]
+[ext_resource type="Texture2D" uid="uid://djq6fydd0qy02" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack5.png" id="5_2muwv"]
+[ext_resource type="Texture2D" uid="uid://b72i4ilwy083j" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle5.png" id="5_qi8ef"]
+[ext_resource type="Texture2D" uid="uid://beiknic1sbkuc" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack6.png" id="6_1vpi6"]
+[ext_resource type="Texture2D" uid="uid://cc57dopbbs3bd" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle6.png" id="6_ahqst"]
+[ext_resource type="Texture2D" uid="uid://boypyh0qu8ej0" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack7.png" id="7_7lv6r"]
+[ext_resource type="Texture2D" uid="uid://bg4t8hiu3moal" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle7.png" id="7_oapel"]
+[ext_resource type="Texture2D" uid="uid://c7oj6csms64g6" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack8.png" id="8_f6vhx"]
+[ext_resource type="Texture2D" uid="uid://dlceeyxa4080y" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle8.png" id="8_p47ai"]
+[ext_resource type="Texture2D" uid="uid://c6ucvy5ka6vh6" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack9.png" id="9_lwmms"]
+[ext_resource type="Texture2D" uid="uid://berwljhw375ed" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle9.png" id="9_qvxxs"]
+[ext_resource type="Texture2D" uid="uid://3fft7aajfcsn" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack10.png" id="10_7de0a"]
+[ext_resource type="Texture2D" uid="uid://0afm88pwdffp" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle10.png" id="10_x7yx6"]
+[ext_resource type="Texture2D" uid="uid://b2pkyptegr1y3" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle11.png" id="11_0dqjc"]
+[ext_resource type="Texture2D" uid="uid://vsidgbs3ng8r" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack11.png" id="11_fek6n"]
+[ext_resource type="Texture2D" uid="uid://bcsxv0te56hr3" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle12.png" id="12_ovf52"]
+[ext_resource type="Texture2D" uid="uid://b72ymyq56kcjm" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack12.png" id="12_s158w"]
+[ext_resource type="Texture2D" uid="uid://ddd7mr3ftasqq" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack13.png" id="13_7m22b"]
+[ext_resource type="Texture2D" uid="uid://dbf6bn2h52khl" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle13.png" id="13_k8n72"]
+[ext_resource type="Texture2D" uid="uid://d11tqwqjvdkl6" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death1.png" id="14_4p7tt"]
+[ext_resource type="Texture2D" uid="uid://dqx3k77jf6i66" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle14.png" id="14_axas6"]
+[ext_resource type="Texture2D" uid="uid://dk4klrqf8v5hw" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death2.png" id="15_1w1we"]
+[ext_resource type="Texture2D" uid="uid://dgmnht0qif1sx" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle15.png" id="15_cfsv5"]
+[ext_resource type="Texture2D" uid="uid://nbp4ntx2o7nh" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle16.png" id="16_egukf"]
+[ext_resource type="Texture2D" uid="uid://bjl5tccfqlbju" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death3.png" id="16_vy26n"]
+[ext_resource type="Texture2D" uid="uid://do7cn5cnluefi" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle17.png" id="17_3d5nh"]
+[ext_resource type="Texture2D" uid="uid://cl05bixkbehth" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death4.png" id="17_u5uco"]
+[ext_resource type="Texture2D" uid="uid://clkut1bwp0wq1" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death5.png" id="18_38ixp"]
+[ext_resource type="Texture2D" uid="uid://bqxbxxg1y16as" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle18.png" id="18_r615k"]
+[ext_resource type="Texture2D" uid="uid://bg3k68ds35636" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death6.png" id="19_bvumy"]
+[ext_resource type="Texture2D" uid="uid://b6w13gy4apn6v" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle19.png" id="19_e0drw"]
+[ext_resource type="Texture2D" uid="uid://4st27yfe830l" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death7.png" id="20_a67fx"]
+[ext_resource type="Texture2D" uid="uid://c1s6j4t3sd0ep" path="res://assets/Evil Eye Beast For Itch/Idle/Eye Beast Idle20.png" id="20_h3dwj"]
+[ext_resource type="Texture2D" uid="uid://wuuwm0sqsyt6" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving1.png" id="21_6cjji"]
+[ext_resource type="Texture2D" uid="uid://7sg0fvy3tbrn" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death8.png" id="21_oemvj"]
+[ext_resource type="Texture2D" uid="uid://ddlfqmf3pqn1k" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death9.png" id="22_1yvc5"]
+[ext_resource type="Texture2D" uid="uid://ch1gcijm4fpcs" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving2.png" id="22_pykn1"]
+[ext_resource type="Texture2D" uid="uid://ete8na33q27l" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death10.png" id="23_4njj7"]
+[ext_resource type="Texture2D" uid="uid://com5046mpd2ph" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving3.png" id="23_dqqti"]
+[ext_resource type="Texture2D" uid="uid://dyc384gvtttdf" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving4.png" id="24_goqp3"]
+[ext_resource type="Texture2D" uid="uid://b6tgm64gb27ok" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death11.png" id="24_hyo2h"]
+[ext_resource type="Texture2D" uid="uid://bef0k51l6def0" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving5.png" id="25_35yfs"]
+[ext_resource type="Texture2D" uid="uid://bpygcoim0wmxs" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death12.png" id="25_uga8i"]
+[ext_resource type="Texture2D" uid="uid://bh3bx2710gqj0" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving6.png" id="26_aj657"]
+[ext_resource type="Texture2D" uid="uid://pf0iojfvcsa7" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death13.png" id="26_w806a"]
+[ext_resource type="Texture2D" uid="uid://dg4vmqfsno7x4" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving7.png" id="27_bvaau"]
+[ext_resource type="Texture2D" uid="uid://cqvjs8ev88c2w" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death14.png" id="27_ce02h"]
+[ext_resource type="Texture2D" uid="uid://dml1af75eex10" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving8.png" id="28_5p7t5"]
+[ext_resource type="Texture2D" uid="uid://c8c0utqnks8e" path="res://assets/Evil Eye Beast For Itch/Death/Eye Beast Death15.png" id="28_iagcx"]
+[ext_resource type="Texture2D" uid="uid://bvf1pjt1yskbl" path="res://assets/Evil Eye Beast For Itch/Hit/Eye Beast Hit1.png" id="29_fhead"]
+[ext_resource type="Texture2D" uid="uid://do16hfjq43ujs" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving9.png" id="29_g6qwx"]
+[ext_resource type="Texture2D" uid="uid://c4fwl1sphq25y" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving10.png" id="30_4j7p7"]
+[ext_resource type="Texture2D" uid="uid://bpcn10k27ac40" path="res://assets/Evil Eye Beast For Itch/Hit/Eye Beast Hit2.png" id="30_pfufg"]
+[ext_resource type="Texture2D" uid="uid://ln44lke3n7jp" path="res://assets/Evil Eye Beast For Itch/Hit/Eye Beast Hit3.png" id="31_klbq4"]
+[ext_resource type="Texture2D" uid="uid://b3boom3b8guwa" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving11.png" id="31_x7fxa"]
+[ext_resource type="Texture2D" uid="uid://df2d2molgy4fq" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving12.png" id="32_n87qk"]
+[ext_resource type="Texture2D" uid="uid://jgpi1p2y4tpd" path="res://assets/Evil Eye Beast For Itch/Hit/Eye Beast Hit4.png" id="32_yypp5"]
+[ext_resource type="Texture2D" uid="uid://cpm5c31jsegsw" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving13.png" id="33_8oiui"]
+[ext_resource type="AudioStream" uid="uid://b4ikclod7wdlx" path="res://Music/hitmarker_2.mp3" id="67_035yg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y768m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lw6e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5la2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_phdyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4g42w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2muwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1vpi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7lv6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f6vhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lwmms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7de0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fek6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s158w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7m22b")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_4p7tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1w1we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vy26n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_u5uco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_38ixp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bvumy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_a67fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_oemvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1yvc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4njj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hyo2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_uga8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_w806a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ce02h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_iagcx")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_fhead")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_pfufg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_klbq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yypp5")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uxr05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6chcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xk72x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w4y6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qi8ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ahqst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oapel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p47ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qvxxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x7yx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0dqjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ovf52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k8n72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_axas6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cfsv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_egukf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3d5nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_r615k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e0drw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_h3dwj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_6cjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pykn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dqqti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_goqp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_35yfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_aj657")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_bvaau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5p7t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_g6qwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_4j7p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_x7fxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_n87qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8oiui")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qiuc5"]
+radius = 15.0333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_put8h"]
+radius = 18.0278
+
+[sub_resource type="Animation" id="Animation_8tktx"]
+resource_name = "Attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Attack", &"Attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeBeastCollision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitboxArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2t58c"]
+resource_name = "Death"
+length = 1.33334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Death", &"Death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitboxArea:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EyeBeastCollision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"drop_items"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jbpsb"]
+resource_name = "Hit"
+length = 0.56667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Hit", &"Hit"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.2, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 3, 3, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeBeastCollision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.233333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(8, 1), Vector2(8, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitboxArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.233333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(8, 1), Vector2(8, 1), Vector2(1, 1)]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("67_035yg")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="Animation_jmqbr"]
+resource_name = "Idle"
+length = 1.66667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.66666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Idle", &"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 19]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitboxArea:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, -7), Vector2(1, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EyeBeastCollision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, -7), Vector2(1, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_r8xt7"]
+resource_name = "Move"
+length = 0.66667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Move", &"Move"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeBeastCollision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitboxArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nr6f1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeBeastCollision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitboxArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mpolr"]
+_data = {
+"Attack": SubResource("Animation_8tktx"),
+"Death": SubResource("Animation_2t58c"),
+"Hit": SubResource("Animation_jbpsb"),
+"Idle": SubResource("Animation_jmqbr"),
+"Move": SubResource("Animation_r8xt7"),
+"RESET": SubResource("Animation_nr6f1")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rbqjl"]
+animation = &"Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jg7lp"]
+animation = &"Death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_haty5"]
+animation = &"Hit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1khph"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_10vqp"]
+animation = &"Move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v2wuk"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_llquw"]
+break_loop_at_end = true
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sc5ld"]
+break_loop_at_end = true
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mbs1j"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cebcp"]
+break_loop_at_end = true
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ve085"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nwa87"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m6aq3"]
+advance_mode = 2
+advance_condition = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mp0cv"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m3hef"]
+advance_mode = 2
+advance_condition = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ecccl"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jrqi0"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tuug2"]
+advance_mode = 2
+advance_condition = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j4tgp"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gc80f"]
+states/Attack/node = SubResource("AnimationNodeAnimation_rbqjl")
+states/Attack/position = Vector2(611, -4)
+states/Death/node = SubResource("AnimationNodeAnimation_jg7lp")
+states/Death/position = Vector2(720, 100)
+states/End/position = Vector2(823, 100)
+states/Hit/node = SubResource("AnimationNodeAnimation_haty5")
+states/Hit/position = Vector2(516, 100)
+states/Idle/node = SubResource("AnimationNodeAnimation_1khph")
+states/Idle/position = Vector2(317, 100)
+states/Move/node = SubResource("AnimationNodeAnimation_10vqp")
+states/Move/position = Vector2(611, 196)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_v2wuk"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_llquw"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_sc5ld"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_mbs1j"), "Move", "Attack", SubResource("AnimationNodeStateMachineTransition_cebcp"), "Attack", "Move", SubResource("AnimationNodeStateMachineTransition_ve085"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_nwa87"), "Idle", "Hit", SubResource("AnimationNodeStateMachineTransition_m6aq3"), "Hit", "Idle", SubResource("AnimationNodeStateMachineTransition_mp0cv"), "Attack", "Hit", SubResource("AnimationNodeStateMachineTransition_m3hef"), "Hit", "Attack", SubResource("AnimationNodeStateMachineTransition_ecccl"), "Hit", "Move", SubResource("AnimationNodeStateMachineTransition_jrqi0"), "Move", "Hit", SubResource("AnimationNodeStateMachineTransition_tuug2"), "Hit", "Death", SubResource("AnimationNodeStateMachineTransition_j4tgp")]
+graph_offset = Vector2(-18, -33.6585)
+
+[node name="EyeBeast" type="CharacterBody2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_pr1g3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -2.5)
+sprite_frames = SubResource("SpriteFrames_y768m")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 1
+
+[node name="EyeBeastCollision" type="CollisionShape2D" parent="."]
+position = Vector2(6, 3)
+shape = SubResource("CircleShape2D_qiuc5")
+
+[node name="HitboxArea" type="Area2D" parent="."]
+position = Vector2(6, 3)
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea"]
+shape = SubResource("CircleShape2D_put8h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mpolr")
+}
+autoplay = "Idle"
+speed_scale = 3.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_gc80f")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack = false
+parameters/conditions/death = false
+parameters/conditions/hit = false
+parameters/conditions/idle = false
+parameters/conditions/move = false
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -30.0
+
+[connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
