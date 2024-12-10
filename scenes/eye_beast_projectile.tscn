@@ -1,0 +1,235 @@
+[gd_scene load_steps=21 format=3 uid="uid://dnx5dw3uet8sy"]
+
+[ext_resource type="Script" path="res://script/eye_beast_projectile.gd" id="1_j3v6g"]
+[ext_resource type="Texture2D" uid="uid://chk6v4t4s1qpn" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Void Ball Projectile1.png" id="1_y180f"]
+[ext_resource type="Texture2D" uid="uid://c88r72byijwnx" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Void Ball Projectile2.png" id="2_l6mll"]
+[ext_resource type="Texture2D" uid="uid://bvmeka6qcgg1g" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Void Ball Projectile3.png" id="3_f2de2"]
+[ext_resource type="Texture2D" uid="uid://dvamvbpmkcfco" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Projectile Destroyed1.png" id="4_ovni0"]
+[ext_resource type="Texture2D" uid="uid://di8g5jf0ge2y2" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Projectile Destroyed2.png" id="5_p4x86"]
+[ext_resource type="Texture2D" uid="uid://pa0qv2qr1noa" path="res://assets/Evil Eye Beast For Itch/Void Ball Projectilep/Projectile Destroyed3.png" id="6_rbabo"]
+[ext_resource type="AudioStream" uid="uid://cmc4vcfcs1kia" path="res://Music/ghast-fireball.mp3" id="8_5aboa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwxqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y180f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l6mll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f2de2")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ovni0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p4x86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rbabo")
+}],
+"loop": true,
+"name": &"Destroyed",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32elv"]
+radius = 12.0
+height = 36.0
+
+[sub_resource type="Animation" id="Animation_0xehi"]
+resource_name = "Active"
+length = 0.333367
+loop_mode = 1
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Active", &"Active"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_reu5l"]
+resource_name = "Destroyed"
+length = 0.200003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Destroyed", &"Destroyed"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_lrash"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Active"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hwsml"]
+_data = {
+"Active": SubResource("Animation_0xehi"),
+"Destroyed": SubResource("Animation_reu5l"),
+"RESET": SubResource("Animation_lrash")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3o4wm"]
+animation = &"Active"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6g3ar"]
+animation = &"Destroyed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4wlhm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_imuti"]
+advance_mode = 2
+advance_condition = &"destroyed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ymdwh"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_uqk2y"]
+states/Active/node = SubResource("AnimationNodeAnimation_3o4wm")
+states/Active/position = Vector2(383, 100)
+states/Destroyed/node = SubResource("AnimationNodeAnimation_6g3ar")
+states/Destroyed/position = Vector2(572, 100)
+states/End/position = Vector2(755, 100)
+transitions = ["Start", "Active", SubResource("AnimationNodeStateMachineTransition_4wlhm"), "Active", "Destroyed", SubResource("AnimationNodeStateMachineTransition_imuti"), "Destroyed", "End", SubResource("AnimationNodeStateMachineTransition_ymdwh")]
+
+[node name="eye_beast_projectile" type="Node2D"]
+script = ExtResource("1_j3v6g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xwxqq")
+animation = &"Active"
+autoplay = "Active"
+frame = 2
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy_attack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_32elv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hwsml")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_uqk2y")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/destroyed = false
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rotation = 0.00243073
+rect = Rect2(-30, -30, 60, 60)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5aboa")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

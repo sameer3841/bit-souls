@@ -1,0 +1,156 @@
+[gd_scene load_steps=13 format=3 uid="uid://pj0c0k3v3css"]
+
+[ext_resource type="Script" path="res://script/main_menu.gd" id="1_21jcr"]
+[ext_resource type="FontFile" uid="uid://beyn6bf08ad76" path="res://assets/Fonts/TrajanPro-Bold.otf" id="1_txsb8"]
+[ext_resource type="FontFile" uid="uid://diqo0p36vvsda" path="res://assets/Fonts/TrajanPro-Regular.ttf" id="3_1mhpf"]
+[ext_resource type="AudioStream" uid="uid://depxsatughdy3" path="res://Music/main_screen_sound.mp3" id="4_spukr"]
+
+[sub_resource type="Environment" id="Environment_ycqi1"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 16.0
+glow_levels/2 = 16.0
+glow_levels/3 = 16.0
+glow_levels/4 = 16.0
+glow_levels/5 = 16.0
+glow_levels/6 = 16.0
+glow_levels/7 = 16.0
+glow_normalized = true
+glow_intensity = 4.0
+glow_strength = 0.35
+glow_bloom = 0.42
+glow_blend_mode = 0
+
+[sub_resource type="Gradient" id="Gradient_k3j6a"]
+offsets = PackedFloat32Array(0, 0.2, 0.401639, 0.6, 0.8, 0.909836, 1)
+colors = PackedColorArray(0.790471, 0.340592, 0.175338, 1, 1, 1, 0, 1, 0.790471, 0.340592, 0.175338, 1, 1, 1, 0, 1, 0.790471, 0.340592, 0.175338, 1, 1, 0.786, 0, 1, 1, 1, 0, 0)
+metadata/_snap_count = 5
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fvjwp"]
+gradient = SubResource("Gradient_k3j6a")
+use_hdr = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jfox8"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(576, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 90.0
+direction = Vector3(0, -20, 0)
+spread = 10.0
+initial_velocity_min = 30.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_fvjwp")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veqyu"]
+bg_color = Color(0.274024, 0.226383, 0.0639328, 0.876)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.388, 0.325, 0.106, 0)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxilu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y55rn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wy7e4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_21jcr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ycqi1")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0.002, 0.039, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(574, 651)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_jfox8")
+lifetime = 15.0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -182.0
+offset_right = 342.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_txsb8")
+theme_override_font_sizes/font_size = 120
+text = "BIT SOULS™"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 48.0
+offset_right = 100.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1mhpf")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_veqyu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_veqyu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uxilu")
+text = "play demo"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1mhpf")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_veqyu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_veqyu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y55rn")
+text = "options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1mhpf")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_veqyu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_veqyu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wy7e4")
+text = "quit"
+
+[node name="MainScreenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_spukr")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
