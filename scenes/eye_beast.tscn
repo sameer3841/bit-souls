@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://s6lvlg058uf6"]
+[gd_scene load_steps=98 format=3 uid="uid://s6lvlg058uf6"]
 
 [ext_resource type="Texture2D" uid="uid://dbcr77ki083j7" path="res://assets/Evil Eye Beast For Itch/Attack/Eye Beast Attack1.png" id="1_lw6e6"]
 [ext_resource type="Script" path="res://script/eye_beast.gd" id="1_pr1g3"]
@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://df2d2molgy4fq" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving12.png" id="32_n87qk"]
 [ext_resource type="Texture2D" uid="uid://jgpi1p2y4tpd" path="res://assets/Evil Eye Beast For Itch/Hit/Eye Beast Hit4.png" id="32_yypp5"]
 [ext_resource type="Texture2D" uid="uid://cpm5c31jsegsw" path="res://assets/Evil Eye Beast For Itch/Movement/Eye Beast Moving13.png" id="33_8oiui"]
+[ext_resource type="AudioStream" uid="uid://b4ikclod7wdlx" path="res://Music/hitmarker_2.mp3" id="67_035yg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y768m"]
 animations = [{
@@ -419,9 +420,12 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.33333),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(1, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"drop_items"
+}, {
 "args": [],
 "method": &"queue_free"
 }]
@@ -478,6 +482,21 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(8, 1), Vector2(8, 1), Vector2(1, 1)]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("67_035yg")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jmqbr"]
 resource_name = "Idle"
@@ -782,6 +801,9 @@ parameters/conditions/move = false
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -30.0
 
 [connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
